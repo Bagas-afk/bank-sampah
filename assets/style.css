@@ -1,0 +1,21 @@
+.jumbotron img {
+	max-width: 70%;
+	border: black;
+}
+
+.bank {
+	position: relative;
+	max-width: 10;
+	max-height: fit-content;
+	size: 4cm;
+
+}
+
+.tambah {
+	position: center;
+
+}
+
+.paragraf {
+	text-indent: 45px;
+}

@@ -185,13 +185,31 @@ class User extends CI_Controller
     {
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
+        $this->form_validation->set_rules('nik', 'nik', 'required|trim|numeric|max_length[16]|min_length[16]|is_unique[user.nik]', [
+            'numeric' => 'Harus dengan angka!', 'max_length' => 'Harus 16 digit!', 'min_length' => 'Harus 16 digit!', 'is_unique' => 'This KTP has already registred!'
+        ]);
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
+            'is_unique' => 'This email has already registred!'
+        ]);
+        $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+        $this->form_validation->set_rules('tanggal_lahir', 'tanggal_lahir', 'required|trim');
+        $this->form_validation->set_rules('no_telpon', 'no_telpon', 'required|trim');
+        $this->form_validation->set_rules('pekerjaan', 'pekerjaan', 'required|trim');
+        $this->form_validation->set_rules('alamat', 'alamat', 'required|trim');
+        $this->form_validation->set_rules('kecamatan', 'kecamatan', 'required|trim');
+        $this->form_validation->set_rules('kelurahan', 'kelurahan', 'required|trim');
 
-        $data['title'] = 'Tambah Nasabah';
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('user/tambahnasabah', $data);
-        $this->load->view('templates/footer');
+        if ($this->form_validation->run() == false) {
+            $data['title'] = 'Tambah Nasabah';
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('user/tambahnasabah', $data);
+            $this->load->view('templates/footer');
+        } else {
+            //validation success
+            $this->tambahAksi();
+        }
     }
 
     public function tambahSampah()
@@ -257,16 +275,16 @@ class User extends CI_Controller
     public function tambahAksi()
     {
 
-        $this->form_validation->set_rules('nik', 'nik', 'required|trim|numeric|max_length[16]|min_length[16]|is_unique[user.nik]', [
-            'numeric' => 'Harus dengan angka!', 'max_length' => 'Harus 16 digit!', 'min_length' => 'Harus 16 digit!', 'is_unique' => 'This KTP has already registred!'
-        ]);
+        // $this->form_validation->set_rules('nik', 'nik', 'required|trim|numeric|max_length[16]|min_length[16]|is_unique[user.nik]', [
+        //     'numeric' => 'Harus dengan angka!', 'max_length' => 'Harus 16 digit!', 'min_length' => 'Harus 16 digit!', 'is_unique' => 'This KTP has already registred!'
+        // ]);
+        // $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
+        //     'is_unique' => 'This email has already registred!'
+        // ]);
         $nama = $this->input->post('nama');
         $tanggal_lahir = $this->input->post('tanggal_lahir');
         $jenis_kelamin = $this->input->post('jenis_kelamin');
         $no_telpon = $this->input->post('no_telpon');
-        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
-            'is_unique' => 'This email has already registred!'
-        ]);
         $password = $this->input->post('password');
         $agama = $this->input->post('agama');
         $alamat = $this->input->post('alamat');

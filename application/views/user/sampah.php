@@ -9,20 +9,19 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-3 justify-content-start">
+        <div class="col-md justify-content-start">
             <button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-list"> Tambah Jenis Sampah</i></button>
         </div>
-        <div class="col-md-3 justify-content-start">
+        <div class="col-md justify-content-start">
             <a href="<?= base_url('mpdfcontroller/printPDF') ?>" type="button" class="btn btn-lg btn-info mb-4"> <i class="fas fa-print"> Cetak daftar sampah </i></a>
         </div>
     </div>
     <div class="row mt-3">
         <div class="col">
             <div class="table-responsive">
-                <table class="table table-responsive" id="dataTable">
+                <table class="table" id="dataTable">
                     <thead class="thead-dark">
                         <!-- Button trigger modal -->
-
                         <tr>
                             <th scope=" col">No</th>
                             <th scope="col">Nama Barang</th>

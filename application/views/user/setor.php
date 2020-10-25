@@ -63,34 +63,35 @@
             </div>
 
             </form>
-            <table class="table table-bordered" id="dataTable">
-                <thead>
-                    <th>No</th>
-                    <th>Nama Nasabah</th>
-                    <th>Jenis Sampah</th>
-                    <th>Harga Sampah</th>
-                    <th>Berat Sampah</th>
-                    <th>Satuan</th>
-                    <th>Sub Total</th>
-                </thead>
-                <tbody>
-                    <?php
-                    $no = 1;
-                    foreach ($setor as $tampil) { ?>
-                        <tr>
-                            <td><?= $no++ ?></td>
-                            <td><?= $tampil->nama ?></td>
-                            <td><?= $tampil->jenis_sampah ?></td>
-                            <td><?= $tampil->harga ?></td>
-                            <td><?= $tampil->jumlah_kg ?></td>
-                            <td><?= $tampil->satuan ?></td>
-                            <td><?= $tampil->sub_total ?></td>
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable">
+                    <thead>
+                        <th>No</th>
+                        <th>Nama Nasabah</th>
+                        <th>Jenis Sampah</th>
+                        <th>Harga Sampah</th>
+                        <th>Berat Sampah</th>
+                        <th>Satuan</th>
+                        <th>Sub Total</th>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $no = 1;
+                        foreach ($setor as $tampil) { ?>
+                            <tr>
+                                <td><?= $no++ ?></td>
+                                <td><?= $tampil->nama ?></td>
+                                <td><?= $tampil->jenis_sampah ?></td>
+                                <td><?= $tampil->harga ?></td>
+                                <td><?= $tampil->banyak_sampah ?></td>
+                                <td><?= $tampil->satuan ?></td>
+                                <td><?= $tampil->jumlah_penarikan ?></td>
 
-                        </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
-
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

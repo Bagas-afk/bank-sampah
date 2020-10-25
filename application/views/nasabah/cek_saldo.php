@@ -2,16 +2,14 @@
 <div class="container-fluid">
     <h1 class=""><?= $title; ?></h1>
     <!-- Page Heading -->
+    <div class="row">
+        <div class="col-sm-6 justify-content-end">
+            <?= $this->session->flashdata('message'); ?>
+        </div>
 
-    <!-- <?php
-            $hariIni = new DateTime();
-            echo $hariIni->format('D M y H:i') . '<br>';
-            ?> -->
-    <div class="col-sm-6">
-        <?= $this->session->flashdata('message'); ?>
     </div>
-    <div class="card" style="max-width: 25rem;">
 
+    <div class="card" style="max-width: 25rem;">
         <div class="card-body">
             <div class="row">
                 <div class="col-sm-6">
@@ -76,7 +74,7 @@
                             <div class="form-group row">
                                 <label for="staticEmail" class="col-sm-4 col-form-label">Tanggal</label>
                                 <div class="col-sm-8">
-                                    <input type="date" value="<?php echo date('d-m-Y H:i:s'); ?>" name="tanggal" required class="form-control-plaintext">
+                                    <input type="date" name="tanggal" required class="form-control-plaintext">
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -93,56 +91,60 @@
 
     <hr>
     <h3>Setoran Sampah</h3>
-    <table class="table table-bordered mb-3" id="dataTable">
-        <thead>
-            <th>No</th>
-            <th>Nama Sampah</th>
-            <th>Satuan</th>
-            <th>Harga Sampah</th>
-            <th>Jumlah</th>
-            <th>Sub Total</th>
-            <th>Tanggal</th>
-        </thead>
-        <tbody>
-            <?php
-            $no = 1;
-            foreach ($setor as $setor) { ?>
-                <tr>
-                    <td><?= $no++ ?></td>
-                    <td><?= $setor->jenis_sampah ?></td>
-                    <td><?= $setor->satuan ?></td>
-                    <td><?= $setor->harga ?></td>
-                    <td><?= $setor->jumlah_kg ?></td>
-                    <td><?= $setor->sub_total ?></td>
-                    <td><?= $setor->tanggal_setor ?></td>
-                </tr>
-            <?php } ?>
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table table-bordered mb-3" id="dataTable">
+            <thead>
+                <th>No</th>
+                <th>Nama Sampah</th>
+                <th>Satuan</th>
+                <th>Harga Sampah</th>
+                <th>Jumlah</th>
+                <th>Sub Total</th>
+                <th>Tanggal</th>
+            </thead>
+            <tbody>
+                <?php
+                $no = 1;
+                foreach ($setor as $setor) { ?>
+                    <tr>
+                        <td><?= $no++ ?></td>
+                        <td><?= $setor->jenis_sampah ?></td>
+                        <td><?= $setor->satuan ?></td>
+                        <td><?= $setor->harga ?></td>
+                        <td><?= $setor->banyak_sampah ?></td>
+                        <td><?= $setor->jumlah_penarikan ?></td>
+                        <td><?= $setor->tanggal ?></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
 
     <h3 class="mt-5">History Withdraw</h3>
-    <table class="table table-bordered mt-3" id="dataTable">
-        <thead>
-            <th>No</th>
-            <th>Jumlah Penarikan</th>
-            <th>Tanggal</th>
-            <th>Verifikasi Penarikan</th>
-            <th>Cetak Bukti</th>
-        </thead>
-        <tbody>
-            <?php
-            $no = 1;
-            foreach ($penarikan as $penarikan) { ?>
-                <tr>
-                    <td><?= $no++; ?></td>
-                    <td><?= $penarikan->jumlah_penarikan ?></td>
-                    <td><?= $penarikan->tanggal ?></td>
-                    <td><?= $penarikan->detail_transaksi ?></td>
-                    <td> <a href="<?= base_url('mpdfcontroller/penarikan') ?>" type="button" class="btn btn-sm btn-danger">Cetak Bukti</a></td>
-                </tr>
-            <?php } ?>
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table table-bordered mt-3" id="dataTable">
+            <thead>
+                <th>No</th>
+                <th>Jumlah Penarikan</th>
+                <th>Tanggal</th>
+                <th>Verifikasi Penarikan</th>
+                <th>Cetak Bukti</th>
+            </thead>
+            <tbody>
+                <?php
+                $no = 1;
+                foreach ($penarikan as $penarikan) { ?>
+                    <tr>
+                        <td><?= $no++; ?></td>
+                        <td><?= $penarikan->jumlah_penarikan ?></td>
+                        <td><?= $penarikan->tanggal ?></td>
+                        <td><?= $penarikan->detail_transaksi ?></td>
+                        <td> <a href="<?= base_url('mpdfcontroller/penarikan') ?>" type="button" class="btn btn-sm btn-danger">Cetak Bukti</a></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
 </div>
 <!-- container-fluid -->
 

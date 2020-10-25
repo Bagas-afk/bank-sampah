@@ -14,6 +14,11 @@
         return $this->db->insert('tb_transaksi', $data);
     }
 
+    function tampilTransaksi()
+    {
+        return $this->db->get('tb_transaksi');
+    }
+
     function tampilTarik($id)
     {
         $this->db->where('id', $id);

@@ -66,22 +66,16 @@ class User extends CI_Controller
         $id_user = $this->input->post('namanasabah');
         $id_sampah = $this->input->post('jenis_sampah');
         $sub_total = $this->input->post('subtotal');
-        $data = [
-            'id' => '',
-            'tanggal_setor' => date('Y-m-d H:i:s'),
-            'id_user' => $id_user,
-            'id_sampah' => $id_sampah,
-            'jumlah_kg' => $this->input->post('jumlah_kg'),
-            'sub_total' => $sub_total,
-        ];
 
         $transaksi = [
             'id' => '',
             'id_user' => $id_user,
+            'id_sampah' => $id_sampah,
+            'banyak_sampah' => $this->input->post('jumlah_kg'),
             'jumlah_penarikan' => $sub_total,
             'tipe_transaksi' => 'Setoran sampah',
-            'tanggal' => date('Y-m-d H:i:s')
-
+            'tanggal' => date('Y-m-d'),
+            'detail_transaksi' => 'Berhasil setor'
         ];
         $saldoNasabah = $this->ModelSetor->saldoNasabah($id_user)->row();
         $last_balance = intval($saldoNasabah->saldo + $sub_total);
@@ -89,7 +83,6 @@ class User extends CI_Controller
         // die;
         $this->ModelSetor->updateSaldo($last_balance, $id_user);
         $this->ModelSetor->tambahTransaksi($transaksi);
-        $this->ModelSetor->simpanSetor($data);
         $this->session->set_flashdata(
             'message',
             '<div class="alert alert-success" role="alert">Berhasil menambahkan data setor sampah!</div>'

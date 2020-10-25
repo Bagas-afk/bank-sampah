@@ -32,14 +32,17 @@ class MpdfController extends CI_Controller
         // $data['jenis_sampah'] = $this->ModelSampah->tampilSampah()->result();
         // print_r($data['jenis_sampah']);
         // die;
-        $html = $this->load->view('user/mpdf_penarikan', [], true);
+        $data['withdraw'] = $this->ModelNasabah->tampilTransaksi()->result();
+        // print_r($data['withdraw']);
+        // die;
+        $data = $this->load->view('user/mpdf_penarikan', $data, true);
         $mpdf = new \Mpdf\Mpdf([
             'debug' => true,
             'allow_output_buffering' => true,
             'format' => 'A5',
             'orientation' => 'L'
         ]);
-        $mpdf->WriteHTML($html);
+        $mpdf->WriteHTML($data);
         $mpdf->SetTitle('Cetak Bukti');
         $mpdf->Output();
     }

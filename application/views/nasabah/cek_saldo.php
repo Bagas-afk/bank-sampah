@@ -112,8 +112,8 @@
                         <td><?= $setor->satuan ?></td>
                         <td><?= $setor->harga ?></td>
                         <td><?= $setor->banyak_sampah ?></td>
-                        <td><?= $setor->jumlah_penarikan ?></td>
-                        <td><?= $setor->tanggal ?></td>
+                        <td><?= $setor->jumlah_subtotal ?></td>
+                        <td><?= $setor->tanggal_transaksi ?></td>
                     </tr>
                 <?php } ?>
             </tbody>
@@ -136,10 +136,10 @@
                 foreach ($penarikan as $penarikan) { ?>
                     <tr>
                         <td><?= $no++; ?></td>
-                        <td><?= $penarikan->jumlah_penarikan ?></td>
-                        <td><?= $penarikan->tanggal ?></td>
+                        <td><?= $penarikan->jumlah_subtotal ?></td>
+                        <td><?= $penarikan->tanggal_transaksi ?></td>
                         <td><?= $penarikan->detail_transaksi ?></td>
-                        <td> <a href="<?= base_url('mpdfcontroller/penarikan') ?>" type="button" class="btn btn-sm btn-danger">Cetak Bukti</a></td>
+                        <td> <a href="<?= base_url('mpdfcontroller/penarikan/') . $penarikan->id ?>" type="button" class="btn btn-sm btn-danger">Cetak Bukti</a></td>
                     </tr>
                 <?php } ?>
             </tbody>

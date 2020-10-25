@@ -14,8 +14,9 @@
         return $this->db->insert('tb_transaksi', $data);
     }
 
-    function tampilTransaksi()
+    function tampilTransaksi($id)
     {
+        $this->db->where('id', $id);
         return $this->db->get('tb_transaksi');
     }
 

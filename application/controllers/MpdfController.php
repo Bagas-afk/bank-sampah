@@ -25,21 +25,21 @@ class MpdfController extends CI_Controller
         $mpdf->Output();
     }
 
-    public function penarikan()
+    public function penarikan($id)
     {
         require_once APPPATH . 'vendor/autoload.php';
 
         // $data['jenis_sampah'] = $this->ModelSampah->tampilSampah()->result();
         // print_r($data['jenis_sampah']);
         // die;
-        $data['withdraw'] = $this->ModelNasabah->tampilTransaksi()->result();
+        $data['withdraw'] = $this->ModelNasabah->tampilTransaksi($id)->result();
         // print_r($data['withdraw']);
         // die;
         $data = $this->load->view('user/mpdf_penarikan', $data, true);
         $mpdf = new \Mpdf\Mpdf([
             'debug' => true,
             'allow_output_buffering' => true,
-            'format' => 'A5',
+            'format' => 'A6',
             'orientation' => 'L'
         ]);
         $mpdf->WriteHTML($data);

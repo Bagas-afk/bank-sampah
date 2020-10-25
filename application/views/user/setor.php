@@ -85,13 +85,17 @@
                                 <td><?= $tampil->harga ?></td>
                                 <td><?= $tampil->banyak_sampah ?></td>
                                 <td><?= $tampil->satuan ?></td>
-                                <td><?= $tampil->jumlah_penarikan ?></td>
-
+                                <td><?= $tampil->jumlah_subtotal ?></td>
                             </tr>
                         <?php } ?>
                     </tbody>
                 </table>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md justify-content-start">
+            <a href="<?= base_url('C_excel/cetak') ?>" type="button" class="btn btn-md btn-info mb-4"> <i class="fas fa-print"> Export data setor </i></a>
         </div>
     </div>
 </div>

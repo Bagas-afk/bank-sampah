@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cetak Penarikan Uang</title>
-    <link rel="stylesheet" href="<?= base_url('/') ?>assets/vendor/css/bootstrap.css">
+    <title>Cetak Daftar Harga Sampah</title>
+    <link rel="stylesheet" href="<?= base_url('/assets/vendor') ?>/css/bootstrap.css">
 </head>
 
 <body>
@@ -13,40 +13,53 @@
     <div class="container">
         <div class="row">
             <table class="w-100 ml-1">
-
-                <td style="width: 151px;" valign="center" align="center">
-                    <img src="<?= base_url('/') ?>assets/img/banksampah.jpg" width="100px" alt="">
-                </td>
-                <td valign="center">
-                    <div class="text-center">
-                        <p class="font-weight-bold mt-2" style="line-height: 1.2em; font-size: 11pt;">Sistem Informasi Pengolahan Data Nasabah</p>
-                        <p class="mt-n3 font-weight-bolder" style="font-size: 20pt; line-height: 1.2em;">Bank Sampah</p>
-                        <p class="mt-n3" style="font-size: 10pt; line-height: 2em;">Jl. Cendrawasih Raya RT.004/RW.02 No. 16 Kel. Sawah Baru</p>
-                        <p class="mt-n3" style="font-size: 10pt; line-height: 1em;">Kec. Ciputat - Kota Tangerang Selatan - Banten 15414 Hp. 0813 9803 4098</p>
-                    </div>
-                </td>
+                <tr>
+                    <td style="width: 151px;" valign="center" align="center">
+                        <img src="<?= base_url('/') ?>assets/img/banksampah.jpg" width="100px" alt="">
+                    </td>
+                    <td valign="center">
+                        <div class="text-center">
+                            <p class="font-weight-bold mt-2" style="line-height: 1.2em; font-size: 11pt;">Sistem Informasi Pengolahan Data Nasabah</p>
+                            <p class="mt-n3 font-weight-bolder" style="font-size: 20pt; line-height: 1.2em;">Bank Sampah</p>
+                            <p class="mt-n3" style="font-size: 10pt; line-height: 2em;">Jl. Cendrawasih Raya RT.004/RW.02 No. 16 Kel. Sawah Baru</p>
+                            <p class="mt-n3 p" style="font-size: 10pt; line-height: 1em;">Kec. Ciputat - Kota Tangerang Selatan - Banten 15413 Hp. 0821 xxxx xxxx</p>
+                        </div>
+                    </td>
                 </tr>
             </table>
 
-            <table class="table table-dark mb-3" border="1">
+            <table class="center" align="center" border="1" style="margin:20px 2px 5px 3px">
                 <thead>
                     <tr>
-                        <?php $no = 1;
-                        foreach ($withdraw as $wd) { ?>
+                        <th scope=" col">No</th>
+                        <th scope="col">Jumlah</th>
+                        <th scope="col">Detail Transaksi</th>
+                        <th scope="col">Tanggal</th>
 
-                            <td><?= $no++; ?></td>
-                            <td style="width: 151px;" align="center"><?= $wd->jumlah_penarikan ?></td>
-                            <td style="width: 151px;" align="center"><?= $wd->detail_transaksi ?></td>
-                            <td style="width: 151px;" align="center"><?= $wd->tanggal ?></td>
                     </tr>
-                <?php } ?>
-                </tr>
                 </thead>
                 <tbody>
-
+                    <?php $no = 1;
+                    foreach ($withdraw as $wd) { ?>
+                        <tr>
+                            <td><?= $no++; ?></td>
+                            <td style="width: 151px;" align="center"><?= $wd->jumlah_subtotal ?></td>
+                            <td style="width: 151px;" align="center"><?= $wd->tipe_transaksi ?></td>
+                            <td style="width: 151px;" align="center"><?= $wd->tanggal_transaksi ?></td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
             </table>
 
+            <table class="w-100 ml-1" class="center" align="center">
+                <tr>
+                    <td valign="center">
+                        <div class="text-center">
 
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 

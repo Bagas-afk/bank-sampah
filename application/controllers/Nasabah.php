@@ -57,8 +57,8 @@ class Nasabah extends CI_Controller
         $data = [
             'id' => '',
             'id_user' => $this->session->userdata('id'),
-            'jumlah_penarikan' => $this->input->post('jumlah_penarikan'),
-            'tanggal' => $this->input->post('tanggal'),
+            'jumlah_subtotal' => $this->input->post('jumlah_penarikan'),
+            'tanggal_transaksi' => $this->input->post('tanggal'),
             'detail_transaksi' => 'Pending',
             'tipe_transaksi' => 'Withdraw',
         ];

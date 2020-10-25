@@ -22,8 +22,8 @@
                             <tr>
                                 <td><?= $no++; ?></td>
                                 <td><?= $tp->nama ?></td>
-                                <td><?= $tp->jumlah_penarikan ?></td>
-                                <td> <?= $tp->tanggal ?></td>
+                                <td><?= $tp->jumlah_subtotal ?></td>
+                                <td> <?= $tp->tanggal_transaksi ?></td>
                                 <td>
                                     <a href="<?= base_url('user/verifPenarikan/') . $tp->id_transaksi ?>" class="btn btn-success"><i class="fas fa-check-square"> Verifikasi</i></a>
                                 </td>

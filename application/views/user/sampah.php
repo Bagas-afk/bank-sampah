@@ -9,11 +9,11 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md justify-content-start">
-            <button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-list"> Tambah Jenis Sampah</i></button>
+        <div class="col-md-9">
+            <button type="button" class="btn btn-md btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"> Tambah Jenis Sampah</i></button>
         </div>
-        <div class="col-md justify-content-start">
-            <a href="<?= base_url('mpdfcontroller/printPDF') ?>" type="button" class="btn btn-lg btn-info mb-4"> <i class="fas fa-print"> Cetak daftar sampah </i></a>
+        <div class="col-md-3">
+            <a href="<?= base_url('mpdfcontroller/printPDF') ?>" type="button" class="btn btn-md btn-info mb-4"> <i class="fas fa-print"> Cetak daftar sampah </i></a>
         </div>
     </div>
     <div class="row mt-3">

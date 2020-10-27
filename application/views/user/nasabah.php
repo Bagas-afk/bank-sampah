@@ -14,7 +14,7 @@
             <table class="table table-houver table-bordered" id="dataTable">
                 <thead class="thead">
                     <!-- Button trigger modal -->
-                    <a href="<?= base_url('user/tambahnasabah'); ?>" type="button" class="btn btn-primary mb-4">Tambah Nasabah</a>
+                    <a href="<?= base_url('user/tambahnasabah'); ?>" type="button" class="btn btn-primary mb-4"><i class="fas fa-plus"> Tambah Nasabah</i></a>
                     <tr>
                         <th scope="col">No</th>
                         <th scope="col">Nama</th>

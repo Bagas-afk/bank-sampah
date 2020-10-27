@@ -74,7 +74,7 @@
                             <div class="form-group row">
                                 <label for="staticEmail" class="col-sm-4 col-form-label">Tanggal</label>
                                 <div class="col-sm-8">
-                                    <input type="date" name="tanggal" required class="form-control-plaintext">
+                                    <input type="date" name="tanggal" required class="form-control-plaintext" min="<?= date('Y-m-d') ?>">
                                 </div>
                             </div>
                             <div class="modal-footer">

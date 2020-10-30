@@ -1,24 +1,91 @@
-function tampilRekening() {
-	var idNasabah = document.getElementById('namaNasabah').value
-	// console.log(idNasabah)
-	if (idNasabah == '') {
-		document.getElementById('no_rek').value = ''
-	} else {
+// function tampilRekening() {
+// 	var idNasabah = document.getElementById('namaNasabah').value
+// 	// console.log(idNasabah)
+// 	if (idNasabah == '') {
+// 		document.getElementById('no_rek').value = ''
+// 	} else {
+// 		$.ajax({
+// 			url: '/bank-sampah/user/tampilDataNasabah/' + idNasabah,
+// 			type: 'get',
+// 			dataType: 'json',
+// 			success: function (data) {
+// 				// console.log(data.no_rekening)
+// 				if (data) {
+// 					document.getElementById('no_rek').value = data.no_rekening
+// 				} else {
+// 					document.getElementById('no_rek').value = ''
+// 				}
+// 			}
+// 		})
+// 	}
+// }
+
+$(document).ready(function(){
+	$('#tgl_cetak').change(function(){
+		var tgl_cetak = document.getElementById('tgl_cetak').value
 		$.ajax({
-			url: '/banksampah/user/tampilDataNasabah/' + idNasabah,
-			type: 'get',
-			dataType: 'json',
-			success: function (data) {
-				// console.log(data.no_rekening)
-				if (data) {
-					document.getElementById('no_rek').value = data.no_rekening
-				} else {
-					document.getElementById('no_rek').value = ''
-				}
+			url : '/bank-sampah/user/tampilCetak/' + tgl_cetak,
+			type : 'get',
+			dataType : 'json',
+			success: function(data){
+				// console.log(data);
+				var html = ''
+				var no = 1
+				data.forEach(data => {
+					html += '<tr>'
+					html += '<td>'+ no++ +'</td>'
+					html += '<td>'+ data.nama +'</td>'
+					html += '<td>'+ data.jenis_sampah +'</td>'
+					html += '<td>'+ data.harga +'</td>'
+					html += '<td>'+ data.banyak_sampah +'</td>'
+					html += '<td>'+ data.satuan +'</td>'
+					html += '<td>'+ data.jumlah_subtotal +'</td>'
+					html += '</tr>'
+				})
+				$('#isi_transaksi').html(html)
 			}
 		})
-	}
+		document.getElementById('tombol_cetak').href = '/bank-sampah/c_excel/cetak/' + tgl_cetak
+	})
+})
+var tgl_cetak = document.getElementById('tgl_cetak').value
+if (tgl_cetak != '') {
+	$.ajax({
+		url : '/bank-sampah/user/tampilCetak/' + tgl_cetak,
+		type : 'get',
+		dataType : 'json',
+		success: function(data){
+			// console.log(data);
+			var html = ''
+			var no = 1
+			data.forEach(data => {
+				html += '<tr>'
+				html += '<td>'+ no++ +'</td>'
+				html += '<td>'+ data.nama +'</td>'
+				html += '<td>'+ data.jenis_sampah +'</td>'
+				html += '<td>'+ data.harga +'</td>'
+				html += '<td>'+ data.banyak_sampah +'</td>'
+				html += '<td>'+ data.satuan +'</td>'
+				html += '<td>'+ data.jumlah_subtotal +'</td>'
+				html += '</tr>'
+			})
+			$('#isi_transaksi').html(html)
+		}
+	})
+	document.getElementById('tombol_cetak').href = '/bank-sampah/c_excel/cetak/' + tgl_cetak
 }
+
+// function tampilCetak() {
+// 	var tgl_cetak = document.getElementById('tgl_cetak').value
+// 	$.ajax({
+// 		url : '/bank-sampah/user/tampilCetak/' + tgl_cetak,
+// 		type : 'get',
+// 		dataType : 'json',
+// 		success: function(data){
+// 			console.log(data);
+// 		}
+// 	})
+// }
 
 function tampilSampah() {
 	var idHarga = document.getElementById('namaSampah').value

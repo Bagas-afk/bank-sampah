@@ -453,4 +453,10 @@ class User extends CI_Controller
             echo 'gagal';
         }
     }
+
+    public function tampilCetak($tanggal)
+    {
+        $data = $this->ModelSetor->cetakTransaksi($tanggal)->result();
+        echo json_encode($data);
+    }
 }

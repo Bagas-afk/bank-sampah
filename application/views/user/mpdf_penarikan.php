@@ -19,10 +19,9 @@
                     </td>
                     <td valign="center">
                         <div class="text-center">
-                            <p class="font-weight-bold mt-2" style="line-height: 1.2em; font-size: 11pt;">Sistem Informasi Pengolahan Data Nasabah</p>
                             <p class="mt-n3 font-weight-bolder" style="font-size: 20pt; line-height: 1.2em;">Bank Sampah</p>
                             <p class="mt-n3" style="font-size: 10pt; line-height: 2em;">Jl. Cendrawasih Raya RT.004/RW.02 No. 16 Kel. Sawah Baru</p>
-                            <p class="mt-n3 p" style="font-size: 10pt; line-height: 1em;">Kec. Ciputat - Kota Tangerang Selatan - Banten 15413 Hp. 0821 xxxx xxxx</p>
+                            <p class="mt-n3 p" style="font-size: 10pt; line-height: 1em;">Kec. Ciputat - Kota Tangerang Selatan - Banten 15413 Hp. 0877 7336 3785</p>
                         </div>
                     </td>
                 </tr>

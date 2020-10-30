@@ -13,9 +13,7 @@
             <table class="table">
                 <form action="<?= base_url('user/tambahSetor') ?>" method="post">
                     <div class="form-group row">
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-2 col-form-label">Nama Nasabah</label>
+                        <label class="col-sm-2 col-form-label">Nama Nasabah</label>
                         <div class="col-sm-4">
                             <select name="namanasabah" class="form-control" required onchange="tampilRekening()" id="namaNasabah">
                                 <option value="">-- Pilih Nasabah --</option>
@@ -25,6 +23,7 @@
                             </select>
                         </div>
                     </div>
+
             </table>
 
             <table class="table">
@@ -58,13 +57,22 @@
                     </td>
                 </tr>
             </table>
+
             <div class="col-md mb-3 d-flex justify-content-center">
                 <button type="submit" class="btn btn-primary">Tambah</button>
             </div>
-
             </form>
+            <form action="<?= base_url('user/tambahSetor') ?>" method="post">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Pilih Tanggal</label>
+                    <div class="col-sm-4">
+                        <input type="date" value="<?= date('Y-m-d') ?>" id="tgl_cetak" class="form-control">
+                    </div>
+                </div>
+            </form>
+
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable">
+                <table class="table table-bordered" id="dataTable" data-info="false" data-paging="false">
                     <thead>
                         <th>No</th>
                         <th>Nama Nasabah</th>
@@ -74,28 +82,14 @@
                         <th>Satuan</th>
                         <th>Sub Total</th>
                     </thead>
-                    <tbody>
-                        <?php
-                        $no = 1;
-                        foreach ($setor as $tampil) { ?>
-                            <tr>
-                                <td><?= $no++ ?></td>
-                                <td><?= $tampil->nama ?></td>
-                                <td><?= $tampil->jenis_sampah ?></td>
-                                <td><?= $tampil->harga ?></td>
-                                <td><?= $tampil->banyak_sampah ?></td>
-                                <td><?= $tampil->satuan ?></td>
-                                <td><?= $tampil->jumlah_subtotal ?></td>
-                            </tr>
-                        <?php } ?>
-                    </tbody>
+                    <tbody id="isi_transaksi"></tbody>
                 </table>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md justify-content-start">
-            <a href="<?= base_url('C_excel/cetak') ?>" type="button" class="btn btn-md btn-info mb-4"> <i class="fas fa-print"> Export data setor </i></a>
+            <a href="" id="tombol_cetak" class="btn btn-md btn-info mb-4"> <i class="fas fa-print"> Export data setor </i></a>
         </div>
     </div>
 </div>

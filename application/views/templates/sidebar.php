@@ -56,7 +56,7 @@
         <hr class="sidebar-divider">
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('home'); ?>">
+            <a class="nav-link" href="<?= base_url('auth/logout'); ?>">
                 <i class="fas fa-fw fa-sign-out-alt"></i>
                 <span>Logout</span></a>
         </li>
@@ -110,7 +110,7 @@
         <hr class="sidebar-divider">
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('home'); ?>">
+            <a class="nav-link" href="<?= base_url('auth/logout'); ?>">
                 <i class="fas fa-fw fa-sign-out-alt"></i>
                 <span>Logout</span></a>
         </li>

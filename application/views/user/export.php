@@ -8,11 +8,6 @@
         <?= $title; ?>
     </title>
 
-    <?php
-    header("Content-type: application/vnd-ms-excel");
-    $date = date('d-m-Y');
-    header("Content-Disposition: attachment; filename=DataSetoran-$date.xls");
-    ?>
 
 </head>
 
@@ -56,10 +51,19 @@
                         <td><?= $data->jumlah_subtotal ?></td>
                     </tr>
                 <?php  } ?>
+                <tr>
+                    <td colspan="6" align="right">Jumlah</td>
+                    <td><?= $total ?></td>
+                </tr>
             </table>
         </div>
     </div>
 
 </body>
+<?php
+header("Content-type: application/vnd-ms-excel");
+$date = date('d-m-Y');
+header("Content-Disposition: attachment; filename=DataSetoran-$date.xls");
+?>
 
 </html>

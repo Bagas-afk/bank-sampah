@@ -3,7 +3,6 @@
 
     function tampilNasabah()
     {
-
         $this->db->order_by('status_akun', 'ASC');
         $this->db->where('role_id', 2);
         return $this->db->get('user');
@@ -37,6 +36,7 @@
         $this->db->where('id', $id);
         return $this->db->update('user', $data);
     }
+
     function tampilPenarikan()
     {
         $this->db->select('*, tb_transaksi.id as id_transaksi');
@@ -52,9 +52,11 @@
         $this->db->where('role_id', 2);
         return $this->db->get('user');
     }
-    function cari_data_nasabah($id_nasabah)
+
+    function cari_data_nasabah($id_nasabah, $email)
     {
         $this->db->where('id', $id_nasabah);
+        $this->db->where('email', $email);
         $this->db->where('role_id', 2);
         return $this->db->get('user');
     }
@@ -91,5 +93,19 @@
     {
         $this->db->where('id', $id);
         return $this->db->update('user', $data);
+    }
+
+    function cari_data($nik)
+    {
+        $this->db->where('nik', $nik);
+        return $this->db->get('user');
+    }
+
+    function ganti_password($password, $email, $nik)
+    {
+        $this->db->set('password', $password);
+        $this->db->where('nik', $nik);
+        $this->db->where('email', $email);
+        return $this->db->update('user');
     }
 }

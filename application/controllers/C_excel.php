@@ -10,13 +10,17 @@ class C_excel extends CI_Controller
         $this->load->model('ModelSetor');
     }
 
-    public function cetak()
+    public function cetak($tanggal)
     {
         $data['title'] = 'Export to excel';
-        $tanggal = date('Y-m-d');
         $data['setor'] = $this->ModelSetor->exportSetor($tanggal)->result();
-        // print_r($data);
-        // die;
+        // $data['jumlah'] = array_sum($data['setor']->jumlah_subtotal);
+        $jumlah = [];
+        foreach ($data['setor'] as $setor) {
+            $jumlah[] = $setor->jumlah_subtotal;
+        }
+        $data['total'] = array_sum($jumlah);
+
         $this->load->view('user/export', $data);
     }
 }

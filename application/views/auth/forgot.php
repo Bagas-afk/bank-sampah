@@ -20,7 +20,7 @@
 
                                 <form class="user" method="post" action="<?= base_url('auth/forgot'); ?>">
                                     <div class="form-group">
-                                        <input type="number" class="form-control form-control-user" id="nik" placeholder="NIK" name="Nik">
+                                        <input type="number" class="form-control form-control-user" id="nik" placeholder="NIK" name="nik">
                                         <?= form_error('nik', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                                     <div class="form-group">

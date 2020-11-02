@@ -201,27 +201,23 @@ class Auth extends CI_Controller
         } else {
             $email = $this->input->post('email', true);
             $nik = $this->input->post('nik', true);
-            $data = $this->db->get_where('user', ['email' => $email, 'status_akun' => 0])->row_array();
-            $data = $this->ModelNasabah->cari_data($nik)->row_array();
+            $data = $this->db->get_where('user', ['nik' => $nik, 'status_akun' => 0])->row_array();
+            $cari_data = $this->ModelNasabah->cari_data_user($nik);
 
-            if ($data) {
-                if ($data->nik == $nik) {
-                    $password_default = 'nasabah#' . substr($nik, 2);
+            if ($cari_data->num_rows() > 0) {
+                $cari_data_user = $cari_data->row();
+                if ($cari_data_user->nik == $nik) {
+                    $password_default = 'nasabah#' . substr($nik, 12);
                     $pass_hash = password_hash($password_default, PASSWORD_DEFAULT);
-                    if ($this->ModelNasabah->ganti_password($pass_hash, $nik, $email)) {
-                        $this->session->set_flashdata('message', "'Password Anda Sekarang Adalah '" . $password_default . "' Silahkan Login dengan Password Baru");
+                    // print_r($pass_hash);
+                    // die;
+                    if ($this->ModelNasabah->ganti_password($pass_hash, $email, $nik)) {
+                        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> Password berhasil direset. "' . $password_default . "' Silahkan Login dengan Password Baru</div>");
                         redirect('auth');
                     }
-                } else {
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> Email not registred or Activated!</div>');
-                    redirect('auth/forgot');
                 }
             } else {
-
-                $this->session->set_flashdata(
-                    'message',
-                    '<div class="alert alert-danger" role="alert"> Email not registred!</div>'
-                );
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> Email not registred or Activated!</div>');
                 redirect('auth/forgot');
             }
         }

@@ -95,7 +95,7 @@
         return $this->db->update('user', $data);
     }
 
-    function cari_data($nik)
+    function cari_data_user($nik)
     {
         $this->db->where('nik', $nik);
         return $this->db->get('user');

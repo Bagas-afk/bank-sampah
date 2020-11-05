@@ -69,6 +69,13 @@
                         <input type="date" value="<?= date('Y-m-d') ?>" id="tgl_cetak" class="form-control">
                     </div>
                 </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-4">
+                        <a href="" id="tombol_cetak" class="btn btn-md btn-info mb-4"> <i class="fas fa-print"> Export data setor </i></a>
+                    </div>
+                </div>
+
             </form>
 
             <div class="table-responsive">
@@ -88,9 +95,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md justify-content-start">
-            <a href="" id="tombol_cetak" class="btn btn-md btn-info mb-4"> <i class="fas fa-print"> Export data setor </i></a>
-        </div>
+
     </div>
 </div>
 <!-- /.container-fluid -->

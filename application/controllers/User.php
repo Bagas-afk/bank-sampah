@@ -66,22 +66,25 @@ class User extends CI_Controller
         $id_user = $this->input->post('namanasabah');
         $id_sampah = $this->input->post('jenis_sampah');
         $sub_total = $this->input->post('subtotal');
+        $saldoNasabah = $this->ModelSetor->saldoNasabah($id_user)->row();
+        $last_balance = intval($saldoNasabah->saldo + $sub_total);
 
         $transaksi = [
             'id' => '',
             'id_user' => $id_user,
             'id_sampah' => $id_sampah,
+            'sebelum_transaksi' => $saldoNasabah->saldo,
+            'sesudah_transaksi' => $last_balance,
             'banyak_sampah' => $this->input->post('jumlah_kg'),
             'jumlah_subtotal' => $sub_total,
             'tipe_transaksi' => 'Setoran sampah',
             'tanggal_transaksi' => date('Y-m-d'),
             'detail_transaksi' => 'Berhasil setor'
         ];
-
-        $saldoNasabah = $this->ModelSetor->saldoNasabah($id_user)->row();
-        $last_balance = intval($saldoNasabah->saldo + $sub_total);
-        // print_r($last_balance);
+        // print_r($transaksi);
         // die;
+
+
         $this->ModelSetor->updateSaldo($last_balance, $id_user);
         $this->ModelSetor->tambahTransaksi($transaksi);
         $this->session->set_flashdata(
@@ -157,9 +160,9 @@ class User extends CI_Controller
         $id = $this->uri->segment(3);
         // tampil data transaksi tarik (id_transksi, id_user)
         $data_penarikan = $this->ModelNasabah->tampilTarik($id)->row();
-        // print_r($data_penarikan);
+        $data_user = $this->ModelNasabah->cari_nasabah($data_penarikan->id_user)->row();
+        // print_r($data_user);
         // die;
-        $data_user = $this->ModelNasabah->cari_data_nasabah($data_penarikan->id_user)->row();
         // hitung saldo - jumlah_penarikan
         $saldoAkhir = $data_user->saldo - $data_penarikan->jumlah_subtotal;
 

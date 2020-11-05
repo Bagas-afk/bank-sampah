@@ -61,6 +61,14 @@
         return $this->db->get('user');
     }
 
+    function cari_nasabah($id_nasabah)
+    {
+        $this->db->where('id', $id_nasabah);
+        $this->db->where('role_id', 2);
+        return $this->db->get('user');
+    }
+
+
     function tambahNasabah($data)
     {
         return $this->db->insert('user', $data);

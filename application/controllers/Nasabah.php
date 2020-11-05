@@ -11,6 +11,7 @@ class Nasabah extends CI_Controller
         }
 
         $this->load->model('ModelNasabah');
+        $this->load->model('ModelSetor');
     }
 
 
@@ -54,10 +55,18 @@ class Nasabah extends CI_Controller
 
     public function tarikSaldo()
     {
+        $sub_total = $this->input->post('jumlah_penarikan');
+        $saldoNasabah = $this->ModelSetor->saldoNasabah($this->session->userdata('id'))->row();
+        // print_r($saldoNasabah);
+        // die;
+        $last_balance = intval($saldoNasabah->saldo - $sub_total);
+
         $data = [
             'id' => '',
             'id_user' => $this->session->userdata('id'),
-            'jumlah_subtotal' => $this->input->post('jumlah_penarikan'),
+            'sebelum_transaksi' => $saldoNasabah->saldo,
+            'sesudah_transaksi' => $last_balance,
+            'jumlah_subtotal' => $sub_total,
             'tanggal_transaksi' => $this->input->post('tanggal'),
             'detail_transaksi' => 'Pending',
             'tipe_transaksi' => 'Withdraw',

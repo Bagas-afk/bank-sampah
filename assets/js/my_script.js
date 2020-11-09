@@ -118,6 +118,15 @@ function tampilSampah() {
 // 	var idNasabah = document.getElementById('id_nasabah').value
 // }
 
+$(document).ready( function () {
+    $('#data_table').DataTable({
+		"lengthMenu": [
+			[5, 10, 15, 20, -1],
+			[5, 10, 15, 20, 'all']
+		]
+	})
+} );
+
 $(document).ready(function () {
 
 	$('#jumlahSampah').keyup(function () {
@@ -126,7 +135,7 @@ $(document).ready(function () {
 		document.getElementById('hasil').value = hrg_sampah * jumlahSampah
 	})
 
-	$('#dataTable').DataTable({
+	$('#datatable').DataTable({
 		"lengthMenu": [
 			[5, 10, 15, 20, -1],
 			[5, 10, 15, 20, 'all']

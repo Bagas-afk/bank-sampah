@@ -18,8 +18,9 @@
 
     <!-- Custom styles for this template-->
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="<?= base_url('assets/'); ?>datatables/datatables.css" rel="stylesheet">
+    <link href="<?= base_url('assets/'); ?>datatables/datatables.css" rel="stylesheet" type="text/css">
     <link href="<?= base_url('assets/'); ?>fontawesome/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" src="<?= base_url('assets/'); ?>datatables/datatables.min.css">
 
 </head>
 

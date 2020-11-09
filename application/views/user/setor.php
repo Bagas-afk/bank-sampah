@@ -79,7 +79,7 @@
             </form>
 
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" data-info="false" data-paging="false">
+                <table class="table table-bordered" id="datatable" data-info="false" data-paging="false">
                     <thead>
                         <th>No</th>
                         <th>Nama Nasabah</th>

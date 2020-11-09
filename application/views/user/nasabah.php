@@ -2,17 +2,17 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <div class="row">
-        <h3><?= $title; ?></h3>
-    </div>
+    <h3><?= $title; ?></h3>
     <div class="row mt-3">
         <div class="col-sm-6 justify-content-start">
             <?= $this->session->flashdata('message'); ?>
         </div>
+    </div>
 
+    <div class="row-mt-3">
         <div class="table-responsive">
-            <table class="table table-houver table-bordered" id="dataTable">
-                <thead class="thead">
+            <table class="table table-bordered" id="data_table">
+                <thead>
                     <!-- Button trigger modal -->
                     <a href="<?= base_url('user/tambahnasabah'); ?>" type="button" class="btn btn-primary mb-4"><i class="fas fa-plus"> Tambah Nasabah</i></a>
                     <tr>
@@ -247,6 +247,5 @@
                 </tbody>
             </table>
         </div>
-
     </div>
 </div>

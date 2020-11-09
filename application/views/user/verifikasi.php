@@ -4,11 +4,13 @@
     <div class="col-sm-6 justify-content-start">
         <?= $this->session->flashdata('message'); ?>
     </div>
+
+
     <div class="row">
         <div class="col-md mt-3">
             <div class="table-responsive">
-                <table class="table table-houver" id="dataTable">
-                    <thead class="table-dark">
+                <table class="table table-houver" id="datatable">
+                    <thead class="">
                         <th scope="col">No</th>
                         <th scope="col">Nama</th>
                         <th scope="col">Jumlah Penarikan</th>

@@ -28,7 +28,7 @@
                 </tr>
             </table>
 
-            <table class="center" align="center" border="1" style="margin:20px 2px 5px 3px">
+            <table class="center" align="center" border="1" style="margin:20px 25px 50px 3px" cellspacing="0" cellpadding="5px">
                 <thead>
                     <tr>
                         <th scope=" col">No</th>

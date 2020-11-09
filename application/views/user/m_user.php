@@ -5,8 +5,8 @@
         <?= $this->session->flashdata('message'); ?>
     </div>
     <div class="row">
-        <div class="col-lg-6 mt-3">
-            <table class="table table-hover">
+        <div class="col-lg">
+            <table class="table table-hover" id="datatable">
                 <thead>
                     <tr>
                         <th scope="col">No</th>

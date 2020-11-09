@@ -3,7 +3,7 @@
     <h1 class=""><?= $title; ?></h1>
     <!-- Page Heading -->
 
-    <div class="card mb-3" style="max-width: 700px;">
+    <div class="card mb-3" style="max-width: 800px;">
         <div class="row no-gutters">
             <div class="col-md-4">
                 <img src="<?= base_url('assets/img/profile/') . $user['image'] ?> ">
@@ -38,7 +38,7 @@
                         <label class="card-title">Alamat</label>
                     </div>
                     <div class="col-sm-4">
-                        <label class="card-title"><?= $user['alamat']; ?></label>
+                        <label class="card-title" cellpadding="3px"><?= $user['alamat']; ?></label>
                     </div>
                 </div>
                 <div class="row">

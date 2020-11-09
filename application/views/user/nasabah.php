@@ -11,19 +11,17 @@
 
     <div class="row-mt-3">
         <div class="table-responsive">
-            <table class="table table-bordered" id="data_table">
+            <table class="table table-bordered" id="datatable">
                 <thead>
                     <!-- Button trigger modal -->
                     <a href="<?= base_url('user/tambahnasabah'); ?>" type="button" class="btn btn-primary mb-4"><i class="fas fa-plus"> Tambah Nasabah</i></a>
-                    <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">No Telpon</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Alamat</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Action</th>
-                    </tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">No Telpon</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Alamat</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
                 </thead>
                 <tbody>
                     <?php

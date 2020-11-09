@@ -21,7 +21,7 @@
     <div class="row mt-3">
         <div class="col">
             <div class="table-responsive">
-                <table class="table" id="datatable" data-info="false" data-paging="false">
+                <table class="table" id="datatable">
                     <thead class="">
                         <!-- Button trigger modal -->
                         <tr>

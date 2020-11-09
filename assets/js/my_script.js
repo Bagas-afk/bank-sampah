@@ -47,6 +47,19 @@ $(document).ready(function(){
 		})
 		document.getElementById('tombol_cetak').href = '/bank-sampah/c_excel/cetak/' + tgl_cetak
 	})
+
+	$('#datatable').DataTable({
+		"lengthMenu": [
+			[5, 10, 15, 20, -1],
+			[5, 10, 15, 20, 'all']
+		]
+	})
+
+	$('#jumlahSampah').keyup(function () {
+		var hrg_sampah = document.getElementById('hrg_sampah').value
+		var jumlahSampah = document.getElementById('jumlahSampah').value
+		document.getElementById('hasil').value = hrg_sampah * jumlahSampah
+	})
 })
 var tgl_cetak = document.getElementById('tgl_cetak').value
 if (tgl_cetak != '') {
@@ -118,40 +131,3 @@ function tampilSampah() {
 // 	var idNasabah = document.getElementById('id_nasabah').value
 // }
 
-$(document).ready( function () {
-    $('#data_table').DataTable({
-		"lengthMenu": [
-			[5, 10, 15, 20, -1],
-			[5, 10, 15, 20, 'all']
-		]
-	})
-} );
-
-$(document).ready(function () {
-
-	$('#jumlahSampah').keyup(function () {
-		var hrg_sampah = document.getElementById('hrg_sampah').value
-		var jumlahSampah = document.getElementById('jumlahSampah').value
-		document.getElementById('hasil').value = hrg_sampah * jumlahSampah
-	})
-
-	$('#datatable').DataTable({
-		"lengthMenu": [
-			[5, 10, 15, 20, -1],
-			[5, 10, 15, 20, 'all']
-		]
-	})
-	// 	var get_wilayah = 'https://x.rajaapi.com/MeP7c5newpy77Dqybi96tXf6q6ZfvacsnAPJFfbhgeIpVWgDOfDHHP8k9C/m/wilayah/'
-	// 	var get_kecamatan = 'kecamatan?idkabupaten=3674'
-	// 	$.getJSON(get_wilayah + get_kecamatan, function (data) {
-	// 		console.log(data)
-	// 		var a, html = ''
-	// 		console.log()
-	// 		html += '<option>-- Pilih Kecamatan --</option>'
-	// 		for (a = 0; a < data.data.length; a++) {
-	// 			html += '<option id="id_kecamatan' + a + '" value="' + data.data[a].name + '" data-id="' + data.data[a].id + '">' + data.data[a].name + '</option>'
-	// 		}
-	// 		$('#kecamatan').html(html)
-	// 		$('#kecamatan').attr("data-banyak", data.data.length)
-	// 	})
-})

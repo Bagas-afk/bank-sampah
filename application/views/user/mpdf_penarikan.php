@@ -27,12 +27,13 @@
                 </tr>
             </table>
 
-            <table class="center" align="center" border="1" style="margin:20px 2px 5px 3px">
+            <table class="center" align="center" border="1" cellspacing="0" cellpadding="10" style="margin:20px 2px 5px 3px">
                 <thead>
                     <tr>
                         <th scope=" col">No</th>
                         <th scope="col">Jumlah</th>
-                        <th scope="col">Detail Transaksi</th>
+                        <th scope="col">Tipe Transaksi</th>
+                        <th scope="col">Verifikasi Penarikan</th>
                         <th scope="col">Tanggal</th>
 
                     </tr>
@@ -44,6 +45,7 @@
                             <td><?= $no++; ?></td>
                             <td style="width: 151px;" align="center"><?= $wd->jumlah_subtotal ?></td>
                             <td style="width: 151px;" align="center"><?= $wd->tipe_transaksi ?></td>
+                            <td style="width: 151px;" align="center"><?= $wd->detail_transaksi ?></td>
                             <td style="width: 151px;" align="center"><?= $wd->tanggal_transaksi ?></td>
                         </tr>
                     <?php } ?>

@@ -10,11 +10,11 @@
     </div>
 
     <div class="row-mt-3">
+        <a href="<?= base_url('user/tambahnasabah'); ?>" type="button" class="btn btn-primary mb-4"><i class="fas fa-plus"> Tambah Nasabah</i></a>
         <div class="table-responsive">
-            <table class="table table-bordered" id="datatable">
+            <table class="table table-hover" id="datatable">
                 <thead>
                     <!-- Button trigger modal -->
-                    <a href="<?= base_url('user/tambahnasabah'); ?>" type="button" class="btn btn-primary mb-4"><i class="fas fa-plus"> Tambah Nasabah</i></a>
                     <th scope="col">No</th>
                     <th scope="col">Nama</th>
                     <th scope="col">No Telpon</th>
@@ -47,7 +47,7 @@
 
                                     <button type=" button" class="btn btn-danger" data-toggle="modal" data-target="#hapusModal<?= $nasabah->id ?>"><i class="fas fa-trash"> Hapus</i></button>
                                 <?php } else { ?>
-                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#infoModal<?= $nasabah->id ?>"><i class="fas fas-fw fa-info-circle"></i></button>
+                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#infoModal<?= $nasabah->id ?>"><i class="fas fas-fw fa-eye"></i></button>
                                     <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editModal<?= $nasabah->id ?>"><i class="fas fas-fw fa-edit"></i></button>
                                     <button type=" button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#hapusModal<?= $nasabah->id ?>"><i class="fas fas-fw fa-trash"></i></button>
                                 <?php } ?>
@@ -241,7 +241,6 @@
                             </div>
                         </div>
                     <?php } ?>
-
                 </tbody>
             </table>
         </div>

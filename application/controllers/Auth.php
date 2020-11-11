@@ -18,9 +18,8 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
         if ($this->form_validation->run() == false) {
             $data['title'] = 'Login Page';
-            $this->load->view('auth/login');
-            $this->load->view('templates/footer');
             $this->load->view('templates/header', $data);
+            $this->load->view('auth/login');
         } else {
             //validation success
             $this->_login();
@@ -30,6 +29,7 @@ class Auth extends CI_Controller
 
     private function _login()
     {
+
         $email = $this->input->post('email');
         $password = $this->input->post('password');
         $user = $this->db->get_where('user', ['email' => $email])->row_array();
@@ -79,6 +79,7 @@ class Auth extends CI_Controller
 
     public function registration()
     {
+
         // if ($this->session->userdata('email')) {
         //     redirect('user');
         // }
@@ -99,9 +100,9 @@ class Auth extends CI_Controller
 
         if ($this->form_validation->run() == false) {
             $data['title'] = 'User Registration';
+            $this->load->view('templates/header', $data);
             $this->load->view('auth/registration');
             $this->load->view('templates/footer');
-            $this->load->view('templates/header', $data);
         } else {
             if ($_FILES['file']['name']) {
                 $data = [
@@ -195,9 +196,8 @@ class Auth extends CI_Controller
 
         if ($this->form_validation->run() == false) {
             $data['title'] = 'Forgot Password';
-            $this->load->view('auth/forgot');
-            $this->load->view('templates/footer');
             $this->load->view('templates/header', $data);
+            $this->load->view('auth/forgot');
         } else {
             $email = $this->input->post('email', true);
             $nik = $this->input->post('nik', true);

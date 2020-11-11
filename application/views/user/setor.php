@@ -9,7 +9,7 @@
     <div class="col-sm-6 justify-content-start">
         <?= $this->session->flashdata('message'); ?>
     </div>
-    <div class="col pb-3">
+    <div class="table">
         <table class="table">
             <form action="<?= base_url('user/tambahSetor') ?>" method="post">
                 <div class="form-group row">
@@ -56,6 +56,7 @@
                     <input type="text" id="hasil" readonly name="subtotal" class="form-control">
                 </td>
             </tr>
+
         </table>
 
         <div class="col-md mb-3 d-flex justify-content-center">
@@ -76,24 +77,21 @@
                 <tbody id="isi_transaksi"></tbody>
             </table>
         </div>
+        <form action="<?= base_url('user/tambahSetor') ?>" method="post">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Pilih Tanggal</label>
+                <div class="col-sm-4">
+                    <input type="date" value="<?= date('Y-m-d') ?>" id="tgl_cetak" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-4">
+                    <a href="" id="tombol_cetak" class="btn btn-md btn-info mb-4"> <i class="fas fa-print"> Export data setor </i></a>
+                </div>
+            </div>
+        </form>
     </div>
-
-    </form>
-    <form action="<?= base_url('user/tambahSetor') ?>" method="post">
-        <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Pilih Tanggal</label>
-            <div class="col-sm-4">
-                <input type="date" value="<?= date('Y-m-d') ?>" id="tgl_cetak" class="form-control">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-sm-2 col-form-label"></label>
-            <div class="col-sm-4">
-                <a href="" id="tombol_cetak" class="btn btn-md btn-info mb-4"> <i class="fas fa-print"> Export data setor </i></a>
-            </div>
-        </div>
-    </form>
-
 </div>
 <!-- /.container-fluid -->
 <!-- End of Main Content -->

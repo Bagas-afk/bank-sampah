@@ -28,11 +28,11 @@
                                         <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                                     <button type="submit" class="btn btn-primary btn-user btn-block">Reset Password </button>
-                                    <hr>
+
                                 </form>
                                 <hr>
                                 <div class="text-center">
-                                    <a class="small" href="<?= base_url('auth'); ?>">Back to login!</a>
+                                    <a class="medium" href="<?= base_url('auth'); ?>">Back to login!</a>
                                 </div>
                             </div>
                         </div>

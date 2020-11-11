@@ -51,7 +51,6 @@ class User extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
-
         $data['title'] = 'Form Data Nasabah';
         $data['data_nasabah'] = $this->ModelNasabah->tampilNasabah()->result();
         $this->load->view('templates/header', $data);

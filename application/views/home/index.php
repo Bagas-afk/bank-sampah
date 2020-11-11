@@ -42,9 +42,9 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-4">
-                            <img src="banksampah.JPG" alt="responsive-image" class="fixed">
+                            <img src="banksampah.JPG" alt="responsive-image" class="d-block">
                         </div>
-                        <div class="col-8">
+                        <div class="col-7">
                             <h3 class="display-4">Sistem Informasi Bank Sampah</h3>
                             <p class="lead">Selamatkan Jiwa, Selamatkan Bumi.</p>
                         </div>
@@ -58,7 +58,8 @@
                 <p class="paragraf">Berdirinya bank sampah di Sawah Baru, Ciputat, Tangerang Selatan, karena adanya permasalahan lingkungan tersebut. Bank Sampah tersebut mengumpulkan sampah dari masyarakat (nasabah) maupun warga luar yang ingin menabung sampah nya di bank sampah yang nantinya akan di timbang (tempat gudang) ataupun di jemput kerumah nasabah dengan harga yang berbeda.</p>
                 <p class="text-right"><a href="<?= base_url('mpdfcontroller/printPDF') ?>" type="button" class="btn btn-info mb-4">Daftar harga sampah</a></p>
             </div>
-        </table>
+    </div>
+    </table>
     </div>
     <!-- Footer -->
     <footer class="sticky-footer bg-white">

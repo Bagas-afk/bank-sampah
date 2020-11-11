@@ -36,14 +36,14 @@ class MpdfController extends CI_Controller
         // print_r($data['withdraw']);
         // die;
         $data = $this->load->view('user/mpdf_penarikan', $data, true);
-        $mpdf = new \Mpdf\Mpdf([
+        $payStub = new \Mpdf\Mpdf([
             'debug' => true,
             'allow_output_buffering' => true,
             'format' => 'A6',
             'orientation' => 'L'
         ]);
-        $mpdf->WriteHTML($data);
-        $mpdf->SetTitle('Cetak Bukti');
-        $mpdf->Output();
+        $payStub->SetTitle('My title');
+        $payStub->WriteHTML($data);
+        $payStub->Output(microtime(true) . '.pdf', 'I');
     }
 }

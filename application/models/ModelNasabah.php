@@ -94,6 +94,7 @@
 
     function countUser()
     {
+        $this->db->where('role_id', 2);
         return $this->db->get('user')->num_rows();
     }
 

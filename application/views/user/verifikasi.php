@@ -10,7 +10,7 @@
         <div class="col-md mt-3">
             <div class="table-responsive">
                 <table class="table table-houver" id="datatable">
-                    <thead class="">
+                    <thead class="thead-light">
                         <th scope="col">No</th>
                         <th scope="col">Nama</th>
                         <th scope="col">Jumlah Penarikan</th>

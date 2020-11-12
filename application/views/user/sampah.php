@@ -22,7 +22,7 @@
         <div class="col">
             <div class="table-responsive">
                 <table class="table table-hover" id="datatable">
-                    <thead class="">
+                    <thead class="thead-light">
                         <!-- Button trigger modal -->
                         <tr>
                             <th scope=" col">No</th>

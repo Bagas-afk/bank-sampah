@@ -9,7 +9,7 @@
             <div class="table-responsive">
 
                 <table class="table table-hover" id="datatable">
-                    <thead>
+                    <thead class="thead-light">
                         <tr>
                             <th scope="col">No</th>
                             <th scope="col">Nama</th>

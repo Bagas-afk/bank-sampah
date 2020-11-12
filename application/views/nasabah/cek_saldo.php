@@ -92,7 +92,7 @@
     <hr>
     <h3>Setoran Sampah</h3>
     <div class="table-responsive">
-        <table class="table table-bordered mb-3" id="dataTable">
+        <table class="table table-bordered mb-3" id="datatable">
             <thead>
                 <th>No</th>
                 <th>Nama Sampah</th>
@@ -122,7 +122,7 @@
 
     <h3 class="mt-5">History Withdraw</h3>
     <div class="table-responsive">
-        <table class="table table-bordered mt-3" id="dataTable">
+        <table class="table table-bordered mt-3" id="datatable">
             <thead>
                 <th>No</th>
                 <th>Jumlah Penarikan</th>

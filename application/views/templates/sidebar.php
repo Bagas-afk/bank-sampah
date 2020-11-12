@@ -75,7 +75,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('nasabah/index'); ?>">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('nasabah/index_nasabah'); ?>">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-trash-restore"></i>
             </div>

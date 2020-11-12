@@ -73,19 +73,27 @@ class Nasabah extends CI_Controller
         ];
         // print_r($data);
         // die;
-        if ($data['jumlah_subtotal'] >= 1000) {
-            $this->ModelNasabah->tarikSaldo($data);
+        if ($data['jumlah_subtotal'] == 0) {
             $this->session->set_flashdata(
                 'message',
-                '<div class="alert alert-primary" role="alert"> Silahkan datang ke Bank sampah untuk pengambilan uang! </div>'
+                '<div class="alert alert-danger" role="alert"> Saldo anda tidak cukup </div>'
             );
             redirect('nasabah/cek_saldo');
         } else {
-            $this->session->set_flashdata(
-                'message',
-                '<div class="alert alert-danger" role="alert"> Minimal withdraw Rp.1000 </div>'
-            );
-            redirect('nasabah/cek_saldo');
+            if ($data['jumlah_subtotal'] >= 1000) {
+                $this->ModelNasabah->tarikSaldo($data);
+                $this->session->set_flashdata(
+                    'message',
+                    '<div class="alert alert-primary" role="alert"> Silahkan datang ke Bank sampah untuk pengambilan uang! </div>'
+                );
+                redirect('nasabah/cek_saldo');
+            } else {
+                $this->session->set_flashdata(
+                    'message',
+                    '<div class="alert alert-danger" role="alert"> Minimal withdraw Rp.1000 </div>'
+                );
+                redirect('nasabah/cek_saldo');
+            }
         }
     }
 }

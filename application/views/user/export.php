@@ -8,6 +8,11 @@
         <?= $title; ?>
     </title>
 
+    <?php
+    header("Content-type: application/vnd-ms-excel");
+    $date = date('d-m-Y');
+    header("Content-Disposition: attachment; filename=DataSetoran-$date.xls");
+    ?>
 
 </head>
 
@@ -16,7 +21,7 @@
         <div class="row">
             <table cellspacing="0" cellpadding="10px" style="width: 100%;">
                 <tr>
-                    <td valign="center" colspan=7 style="border:none;">
+                    <td valign="center" colspan="8" style="border:none;">
                         <div class="text-center">
                             <p class="mt-n3 font-weight-bolder" align="center" style="font-size: 20pt;">Bank Sampah</p>
                             <p class="mt-n3" align="center" style="font-size: 15pt;">Jl. Cendrawasih Raya RT.004/RW.02 No. 16 Kel. Sawah Baru</p>
@@ -25,7 +30,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="7"></td>
+                    <td colspan="5"></td>
                 </tr>
             </table>
             <table border="1" cellspacing="0" cellpadding="10px" style="width: 100%;">
@@ -62,10 +67,5 @@
     </div>
 
 </body>
-<?php
-header("Content-type: application/vnd-ms-excel");
-$date = date('d-m-Y');
-header("Content-Disposition: attachment; filename=DataSetoran-$date.xls");
-?>
 
 </html>

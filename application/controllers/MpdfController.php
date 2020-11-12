@@ -20,9 +20,12 @@ class MpdfController extends CI_Controller
         // print_r($data['jenis_sampah']);
         // die;
         $data = $this->load->view('mpdf_v', $data, true);
-        $mpdf = new \Mpdf\Mpdf([]);
-        $mpdf->WriteHTML($data);
-        $mpdf->Output();
+        $payStub = new \Mpdf\Mpdf([]);
+        // $mpdf->WriteHTML($data);
+        // $mpdf->Output();
+        $payStub->SetTitle('My title');
+        $payStub->WriteHTML($data);
+        $payStub->Output(("Daftar harga ") . date("Y-m-d.") . '.pdf', 'I');
     }
 
     public function penarikan($id)

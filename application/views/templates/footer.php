@@ -1,8 +1,8 @@
 <!-- Footer -->
-<footer class="page-footer font-small teal pt-4 relative-bottom">
+<footer class="page-footer font-small teal pt-4 fix-bottom">
     <div class="container-fluid text-center text-md-left">
         <div class="footer-copyright text-center py-5">
-            <h6> <span>Copyright &copy; Bank Sampah 2020</span></h6>
+            <h6>Copyright &copy; <span>Bank Sampah 2020 </span>All rights reserved | This template Remake by Bagas Kurniawan</h6>
         </div>
     </div>
 </footer>
@@ -41,15 +41,18 @@
 <!-- Bootstrap core JavaScript-->
 <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
 <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?= base_url('assets/'); ?>vendor/chart.js/Chart.js"></script>
 
 <!-- Core plugin JavaScript-->
 <script src="<?= base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
 <script src="<?= base_url('assets/'); ?>datatables/datatables.js"></script>
 <script type="text/javascript" src="<?= base_url('assets/'); ?>datatables/datatables.min.js"></script>
 
+
 <!-- Custom scripts for all pages-->
 <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
 <script src="<?= base_url('assets/'); ?>js/my_script.js"></script>
+<script src="<?= base_url('assets/'); ?>js/demo/chart-area-demo.js"></script>
 
 
 

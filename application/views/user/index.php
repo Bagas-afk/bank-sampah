@@ -4,13 +4,13 @@
 
     <!-- Earnings (Monthly) Card Example -->
     <div class="row">
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-info shadow h-100 py-2">
+        <div class="col-4">
+            <div class="card bg-info shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Data Nasabah</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><span><?= $query ?></span>
+                            <div class="text-lg text-gray-300">Data Nasabah</div>
+                            <div class="h5 mb-0  text-gray-300"><span><?= $query ?></span>
                             </div>
                         </div>
                         <div class="col-auto">
@@ -21,13 +21,13 @@
             </div>
         </div>
         <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2">
+        <div class="col-4 ">
+            <div class="card bg-primary shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jenis Sampah</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><span><?= $query1 ?></div>
+                            <div class="text-lg text-gray-300">Jenis Sampah</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-300"><span><?= $query1 ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-list fa-2x text-gray-300"></i>
@@ -37,13 +37,13 @@
             </div>
         </div>
         <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
+        <div class="col-4">
+            <div class="card bg-warning shadow h-100 py-2">
+                <div class="card-body ">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jumlah Transaksi</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><span><?= $query2 ?></div>
+                            <div class="text-lg text-gray-300">Jumlah Transaksi</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-300"><span><?= $query2 ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-trash fa-2x text-gray-300"></i>
@@ -54,22 +54,61 @@
         </div>
 
         <!-- Page Heading -->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-xl-8 col-lg-7">
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">Setoran Sampah</h6>
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <div class="chart-area">
+                                <canvas id="myAreaChart" style="display: block; width: 349px; height: 160px;" width="350" height="160" class="chartjs-render-monitor"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="row">
-            <div class="jumbotron">
-                <link rel="stylesheet" href="<?= base_url('assets/style.css'); ?>">
-                <p class="display-4 pb-2">Sistem Informasi Bank Sampah Jawara</p>
-                <hr class="my-4">
-                <p class="paragraf">
-                    Bank Sampah disini mengelola sampah yang berjenis (non-organik) seperti plastik, kertas, botol dsb. Sebelum sampah yang disetor warga, warga diberikan rincian daftar harga sampah per barang. Sampah lalu dikumpulkan digudang penyimpanan dan ditabung sehingga dapat menghasilkan nilai ekonomis untuk nasabah. Untuk mendaftar menjadi nasabah, masyarakat hanya perlu KTP dan No Telpon yang bisa dihubungi, Penabung pun disebut dengan nasabah mereka memiliki buku tabungan yang nantinya dapat diambil. Nama tempat itu adalah Bank Sampah JAWARA (Jalan Cendrawasih Raya) yang terletak di Sawah Baru, Ciputat, Tangerang Selatan.
-                    Dari segi keseimbangan lingkungan, kesehatan dan kebersihan apabila sampah tidak dikelola dengan baik dapat menimbulkan berbagai gangguan-gangguan antara lain pencemaran udara, pencemaran air dan pencemaran tanah.
-                </p>
-                <p class="paragraf">Berdirinya bank sampah di Sawah Baru, Ciputat, Tangerang Selatan, karena adanya permasalahan lingkungan tersebut. Bank Sampah tersebut mengumpulkan sampah dari masyarakat (nasabah) maupun warga luar yang ingin menabung sampah nya di bank sampah yang nantinya akan di timbang (tempat gudang) ataupun di jemput kerumah nasabah dengan harga yang berbeda.</p>
+                <div class="col-xl-4 col-lg-5">
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">Transaksi</h6>
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <div class="chart-pie pt-4 pb-2">
+                                <canvas id="myPieChart">
+                                </canvas>
+                            </div>
+                            <div class="mt-4 text-center small">
+                                <span class="mr-2">
+                                    <i class="fas fa-circle text-primary"></i> Direct
+                                </span>
+                                <span class="mr-2">
+                                    <i class="fas fa-circle text-success"></i> Social
+                                </span>
+                                <span class="mr-2">
+                                    <i class="fas fa-circle text-info"></i> Referral
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
-
-
     </div>
-    <!-- /.container-fluid -->
 
-    <!-- End of Main Content -->
+    <!-- you need to include the shieldui css and js assets in order for the grids to work -->
+
+
+
+
+
+</div>
+<!-- /.container-fluid -->
+
+<!-- End of Main Content -->

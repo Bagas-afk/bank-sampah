@@ -20,6 +20,20 @@
 // 	}
 // }
 
+
+
+// $('.page-scroll').on('click', function(e){
+
+// 	var tujuan = $(this).attr('href');
+// 	var elemenTujuan = $(tujuan);
+
+// 	$('body').animate({
+// 		scrollTop: elemenTujuan.offset().top
+// 	});
+
+// 	e.preventDefault();
+// });
+
 $(document).ready(function(){
 	$('#tgl_cetak').change(function(){
 		var tgl_cetak = document.getElementById('tgl_cetak').value
@@ -126,6 +140,9 @@ function tampilSampah() {
 		})
 	}
 }
+
+
+
 
 // function tampilSetoranNasabah(){
 // 	var idNasabah = document.getElementById('id_nasabah').value

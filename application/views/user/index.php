@@ -65,7 +65,7 @@
                         <!-- Card Body -->
                         <div class="card-body">
                             <div class="chart-area">
-                                <canvas id="myAreaChart" style="display: block; width: 349px; height: 160px;" width="350" height="160" class="chartjs-render-monitor"></canvas>
+                                <canvas id="myAreaChart" style="display: block; width: 349px; height: 160px;"></canvas>
                             </div>
                         </div>
                     </div>
@@ -85,13 +85,10 @@
                             </div>
                             <div class="mt-4 text-center small">
                                 <span class="mr-2">
-                                    <i class="fas fa-circle text-primary"></i> Direct
+                                    <i class="fas fa-circle text-primary"></i> Transaksi
                                 </span>
                                 <span class="mr-2">
-                                    <i class="fas fa-circle text-success"></i> Social
-                                </span>
-                                <span class="mr-2">
-                                    <i class="fas fa-circle text-info"></i> Referral
+                                    <i class="fas fa-circle text-success"></i> Setoran
                                 </span>
                             </div>
                         </div>

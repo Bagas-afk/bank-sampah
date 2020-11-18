@@ -16,3 +16,9 @@
     margin-bottom: 120px;
 }
 
+.sticky-bottom{
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;    
+}

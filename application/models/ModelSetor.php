@@ -12,13 +12,12 @@
         return $this->db->query("SELECT * FROM tb_transaksi INNER JOIN user ON user.id=tb_transaksi.id_user INNER JOIN tb_harga ON tb_harga.id=tb_transaksi.id_sampah WHERE tanggal_transaksi = '$tanggal'");
     }
 
-
     public function simpanSetor($data)
     {
         return $this->db->insert('tb_transaksi', $data);
     }
 
-    function countSetor()
+    public function countSetor()
     {
         return $this->db->get('tb_transaksi')->num_rows();
     }
@@ -63,9 +62,15 @@
         return $this->db->query("SELECT * FROM tb_transaksi INNER JOIN user ON user.id=tb_transaksi.id_user INNER JOIN tb_harga ON tb_harga.id=tb_transaksi.id_sampah WHERE tanggal_transaksi = '$tanggal'");
     }
 
-    function cari_data_transaksi($id)
+    public function cari_data_transaksi($id)
     {
         $this->db->where('id', $id);
         return $this->db->get('tb_transaksi');
+    }
+
+    public function dataTransaksi($type)
+    {
+        $this->db->where($type);
+        return $this->db->get("tb_transaksi");
     }
 }

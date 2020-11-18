@@ -1,6 +1,6 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-    <h3><?= $title; ?></h3>
+    <h3><?=$title; ?></h3>
 
     <!-- Earnings (Monthly) Card Example -->
     <div class="row">
@@ -10,7 +10,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-lg text-gray-300">Data Nasabah</div>
-                            <div class="h5 mb-0  text-gray-300"><span><?= $query ?></span>
+                            <div class="h5 mb-0  text-gray-300"><span><?=$query ?></span>
                             </div>
                         </div>
                         <div class="col-auto">
@@ -27,7 +27,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-lg text-gray-300">Jenis Sampah</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-300"><span><?= $query1 ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-300"><span><?=$query1 ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-list fa-2x text-gray-300"></i>
@@ -43,7 +43,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-lg text-gray-300">Jumlah Transaksi</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-300"><span><?= $query2 ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-300"><span><?=$query2 ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-trash fa-2x text-gray-300"></i>

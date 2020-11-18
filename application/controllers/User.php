@@ -19,10 +19,10 @@ class User extends CI_Controller
     {
 
         $data['user'] = $this->db->get_where('user', ['email' =>
-        $this->session->userdata('email')])->row_array();
+            $this->session->userdata('email')])->row_array();
 
-        $data['title'] = 'Dashboard';
-        $data['query'] = $this->ModelNasabah->countUser();
+        $data['title']  = 'Dashboard';
+        $data['query']  = $this->ModelNasabah->countUser();
         $data['query1'] = $this->ModelSampah->countSampah();
         $data['query2'] = $this->ModelSetor->countSetor();
 
@@ -33,10 +33,9 @@ class User extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-
     public function verifAkun($id_user)
     {
-        $data = ['status_akun' => 1];
+        $data    = ['status_akun' => 1];
         $id_user = $this->uri->segment(3);
         $this->ModelNasabah->verifAkun($data, $id_user);
         $this->session->set_flashdata(
@@ -49,9 +48,9 @@ class User extends CI_Controller
     public function nasabah()
     {
         $data['user'] = $this->db->get_where('user', ['email' =>
-        $this->session->userdata('email')])->row_array();
+            $this->session->userdata('email')])->row_array();
 
-        $data['title'] = 'Form Data Nasabah';
+        $data['title']        = 'Form Data Nasabah';
         $data['data_nasabah'] = $this->ModelNasabah->tampilNasabah()->result();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -62,27 +61,26 @@ class User extends CI_Controller
 
     public function tambahSetor()
     {
-        $id_user = $this->input->post('namanasabah');
-        $id_sampah = $this->input->post('jenis_sampah');
-        $sub_total = $this->input->post('subtotal');
+        $id_user      = $this->input->post('namanasabah');
+        $id_sampah    = $this->input->post('jenis_sampah');
+        $sub_total    = $this->input->post('subtotal');
         $saldoNasabah = $this->ModelSetor->saldoNasabah($id_user)->row();
         $last_balance = intval($saldoNasabah->saldo + $sub_total);
 
         $transaksi = [
-            'id' => '',
-            'id_user' => $id_user,
-            'id_sampah' => $id_sampah,
+            'id'                => '',
+            'id_user'           => $id_user,
+            'id_sampah'         => $id_sampah,
             'sebelum_transaksi' => $saldoNasabah->saldo,
             'sesudah_transaksi' => $last_balance,
-            'banyak_sampah' => $this->input->post('jumlah_kg'),
-            'jumlah_subtotal' => $sub_total,
-            'tipe_transaksi' => 'Setoran sampah',
+            'banyak_sampah'     => $this->input->post('jumlah_kg'),
+            'jumlah_subtotal'   => $sub_total,
+            'tipe_transaksi'    => 'Setoran sampah',
             'tanggal_transaksi' => date('Y-m-d'),
-            'detail_transaksi' => 'Berhasil setor'
+            'detail_transaksi'  => 'Berhasil setor',
         ];
         // print_r($transaksi);
         // die;
-
 
         $this->ModelSetor->updateSaldo($last_balance, $id_user);
         $this->ModelSetor->tambahTransaksi($transaksi);
@@ -96,11 +94,11 @@ class User extends CI_Controller
     public function setor()
     {
         $data['user'] = $this->db->get_where('user', ['email' =>
-        $this->session->userdata('email')])->row_array();
+            $this->session->userdata('email')])->row_array();
 
         $data['nasabah'] = $this->ModelNasabah->tampilNasabahAktif()->result();
-        $data['sampah'] = $this->ModelSampah->tampilSampah()->result();
-        $data['setor'] = $this->ModelSetor->tampilDataSetor()->result();
+        $data['sampah']  = $this->ModelSampah->tampilSampah()->result();
+        $data['setor']   = $this->ModelSetor->tampilDataSetor()->result();
         // print_r($data['nasabah']);
         // die;
         $data['title'] = 'Form Tambah Setor Sampah';
@@ -111,24 +109,24 @@ class User extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-
-    function tampilDataNasabah($id_nasabah)
+    public function tampilDataNasabah($id_nasabah)
     {
         $id_nasabah = $this->uri->segment(3);
-        $data = $this->ModelNasabah->cari_data_nasabah($id_nasabah)->row();
+        $data       = $this->ModelNasabah->cari_data_nasabah($id_nasabah)->row();
         echo json_encode($data);
     }
 
-    function tampilDiagram($id)
+    public function tampilDiagram()
     {
-        $id = $this->uri->segment(3);
-        $data = $this->ModelSetor->cari_data_transaksi($id)->result_array();
-        echo json_encode($data, $id);
+        $setor = $this->ModelSetor->dataTransaksi(["tipe_transaksi" => "Setoran sampah"])->num_rows();
+        $wd    = $this->ModelSetor->dataTransaksi(["tipe_transaksi" => "Withdraw"])->num_rows();
+        $data  = [$setor, $wd];
+        echo json_encode($data);
     }
 
-    function tampilDataSampah($id)
+    public function tampilDataSampah($id)
     {
-        $id = $this->uri->segment(3);
+        $id   = $this->uri->segment(3);
         $data = $this->ModelSampah->cari_data_sampah($id)->row();
         echo json_encode($data);
     }
@@ -136,9 +134,9 @@ class User extends CI_Controller
     public function sampah()
     {
         $data['user'] = $this->db->get_where('user', ['email' =>
-        $this->session->userdata('email')])->row_array();
+            $this->session->userdata('email')])->row_array();
 
-        $data['title'] = 'Form Data Sampah';
+        $data['title']       = 'Form Data Sampah';
         $data['data_sampah'] = $this->ModelSampah->tampilSampah()->result();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -150,9 +148,9 @@ class User extends CI_Controller
     public function verifikasi()
     {
         $data['user'] = $this->db->get_where('user', ['email' =>
-        $this->session->userdata('email')])->row_array();
+            $this->session->userdata('email')])->row_array();
         $data['tampilPenarikan'] = $this->ModelNasabah->tampilPenarikan()->result();
-        $data['title'] = 'Verifikasi Penarikan';
+        $data['title']           = 'Verifikasi Penarikan';
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -166,7 +164,7 @@ class User extends CI_Controller
         $id = $this->uri->segment(3);
         // tampil data transaksi tarik (id_transksi, id_user)
         $data_penarikan = $this->ModelNasabah->tampilTarik($id)->row();
-        $data_user = $this->ModelNasabah->cari_nasabah($data_penarikan->id_user)->row();
+        $data_user      = $this->ModelNasabah->cari_nasabah($data_penarikan->id_user)->row();
         // print_r($data_user);
         // die;
         // hitung saldo - jumlah_penarikan
@@ -174,7 +172,7 @@ class User extends CI_Controller
 
         // update user saldo dan verifikasi penarikan menjadi Berhasil
         if ($saldoAkhir >= 0) {
-            $data = ['detail_transaksi' => 'Berhasil'];
+            $data  = ['detail_transaksi' => 'Berhasil'];
             $saldo = ['saldo' => $saldoAkhir];
             // print_r($saldo);
             // die;
@@ -193,12 +191,12 @@ class User extends CI_Controller
     public function tambahnasabah()
     {
         $data['user'] = $this->db->get_where('user', ['email' =>
-        $this->session->userdata('email')])->row_array();
+            $this->session->userdata('email')])->row_array();
         $this->form_validation->set_rules('nik', 'nik', 'required|trim|numeric|max_length[16]|min_length[16]|is_unique[user.nik]', [
-            'numeric' => 'Harus dengan angka!', 'max_length' => 'Harus 16 digit!', 'min_length' => 'Harus 16 digit!', 'is_unique' => 'This KTP has already registred!'
+            'numeric' => 'Harus dengan angka!', 'max_length' => 'Harus 16 digit!', 'min_length' => 'Harus 16 digit!', 'is_unique' => 'This KTP has already registred!',
         ]);
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
-            'is_unique' => 'This email has already registred!'
+            'is_unique' => 'This email has already registred!',
         ]);
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
         $this->form_validation->set_rules('tanggal_lahir', 'tanggal_lahir', 'required|trim');
@@ -224,13 +222,13 @@ class User extends CI_Controller
     public function tambahSampah()
     {
         $jenis_sampah = $this->input->post('jenis_sampah');
-        $harga = $this->input->post('harga');
-        $satuan = $this->input->post('satuan');
-        $data = [
+        $harga        = $this->input->post('harga');
+        $satuan       = $this->input->post('satuan');
+        $data         = [
             'jenis_sampah' => $jenis_sampah,
-            'harga' => $harga,
-            'tanggal' => date('Y-m-d H:i:s'),
-            'satuan' => $satuan
+            'harga'        => $harga,
+            'tanggal'      => date('Y-m-d H:i:s'),
+            'satuan'       => $satuan,
         ];
         if ($this->ModelSampah->tambahSampah($data)) {
             $this->session->set_flashdata(
@@ -245,12 +243,12 @@ class User extends CI_Controller
 
     public function editSampah()
     {
-        $id = ($this->input->post('id'));
-        $harga = $this->input->post('harga');
+        $id     = ($this->input->post('id'));
+        $harga  = $this->input->post('harga');
         $satuan = $this->input->post('satuan');
-        $data = [
-            'harga' => $harga,
-            'satuan' => $satuan
+        $data   = [
+            'harga'  => $harga,
+            'satuan' => $satuan,
         ];
         // print_r($data);
         // die;
@@ -279,8 +277,6 @@ class User extends CI_Controller
         }
     }
 
-
-
     public function tambahAksi()
     {
 
@@ -290,39 +286,39 @@ class User extends CI_Controller
         // $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
         //     'is_unique' => 'This email has already registred!'
         // ]);
-        $nama = $this->input->post('nama');
+        $nama          = $this->input->post('nama');
         $tanggal_lahir = $this->input->post('tanggal_lahir');
         $jenis_kelamin = $this->input->post('jenis_kelamin');
-        $no_telpon = $this->input->post('no_telpon');
-        $password = $this->input->post('password');
-        $agama = $this->input->post('agama');
-        $alamat = $this->input->post('alamat');
-        $kecamatan = $this->input->post('kecamatan');
-        $kelurahan = $this->input->post('kelurahan');
-        $status = $this->input->post('status');
-        $pekerjaan = $this->input->post('pekerjaan');
+        $no_telpon     = $this->input->post('no_telpon');
+        $password      = $this->input->post('password');
+        $agama         = $this->input->post('agama');
+        $alamat        = $this->input->post('alamat');
+        $kecamatan     = $this->input->post('kecamatan');
+        $kelurahan     = $this->input->post('kelurahan');
+        $status        = $this->input->post('status');
+        $pekerjaan     = $this->input->post('pekerjaan');
 
         if ($_FILES['file']['name']) {
             $data = [
-                'id' => '',
-                'nik' => htmlspecialchars($this->input->post('nik', true)),
-                'nama' => $nama,
+                'id'            => '',
+                'nik'           => htmlspecialchars($this->input->post('nik', true)),
+                'nama'          => $nama,
                 'tanggal_lahir' => $tanggal_lahir,
                 'jenis_kelamin' => $jenis_kelamin,
-                'no_telpon' => $no_telpon,
-                'email' => htmlspecialchars($this->input->post('email', true)),
-                'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
-                'agama' => $agama,
-                'alamat' => $alamat,
-                'kecamatan' => $kecamatan,
-                'kelurahan' => $kelurahan,
-                'status' => $status,
-                'pekerjaan' => $pekerjaan,
-                'role_id' => '2',
-                'image' => 'default.png',
-                'file' => $this->upload_gambar_profile($this->input->post('file', true)),
-                'status_akun' => 1,
-                'date_created' => date('Y-m-d H:i:s'),
+                'no_telpon'     => $no_telpon,
+                'email'         => htmlspecialchars($this->input->post('email', true)),
+                'password'      => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+                'agama'         => $agama,
+                'alamat'        => $alamat,
+                'kecamatan'     => $kecamatan,
+                'kelurahan'     => $kelurahan,
+                'status'        => $status,
+                'pekerjaan'     => $pekerjaan,
+                'role_id'       => '2',
+                'image'         => 'default.png',
+                'file'          => $this->upload_gambar_profile($this->input->post('file', true)),
+                'status_akun'   => 1,
+                'date_created'  => date('Y-m-d H:i:s'),
 
             ];
         }
@@ -337,14 +333,14 @@ class User extends CI_Controller
         }
     }
 
-    function upload_gambar_profile($nama)
+    public function upload_gambar_profile($nama)
     {
-        $config['upload_path']          = './assets/file/';
-        $config['allowed_types']        = 'jpg|png|jpeg|pdf';
-        $config['file_name']            = $nama;
-        $config['max_size']             = 5120;
-        $config['encrypt_name']         = TRUE;
-        $config['overwrite']            = TRUE;
+        $config['upload_path']   = './assets/file/';
+        $config['allowed_types'] = 'jpg|png|jpeg|pdf';
+        $config['file_name']     = $nama;
+        $config['max_size']      = 5120;
+        $config['encrypt_name']  = true;
+        $config['overwrite']     = true;
 
         $this->load->library('upload', $config);
 
@@ -352,7 +348,7 @@ class User extends CI_Controller
             $config['image_library'] = 'gd2';
             // $config['width'] = "150";
             // $config['height'] = "150";
-            $config['maintain_ratio'] = FALSE;
+            $config['maintain_ratio'] = false;
             $this->load->library('image_lib', $config);
             $this->image_lib->resize();
             return $this->upload->data('file_name');
@@ -363,14 +359,14 @@ class User extends CI_Controller
 
     public function editNasabah()
     {
-        $id = $this->input->post('id');
-        $nama = $this->input->post('nama');
+        $id        = $this->input->post('id');
+        $nama      = $this->input->post('nama');
         $no_telpon = $this->input->post('no_telpon');
-        $alamat = $this->input->post('alamat');
-        $data = [
-            'nama' => $nama,
+        $alamat    = $this->input->post('alamat');
+        $data      = [
+            'nama'      => $nama,
             'no_telpon' => $no_telpon,
-            'alamat' => $alamat
+            'alamat'    => $alamat,
         ];
         if ($this->ModelNasabah->editNasabah($data, $id)) {
             $this->session->set_flashdata(
@@ -397,13 +393,11 @@ class User extends CI_Controller
         }
     }
 
-
-
     public function editProfile()
     {
         $data['title'] = 'Edit Profile';
-        $data['user'] = $this->db->get_where('user', ['email' =>
-        $this->session->userdata('email')])->row_array();
+        $data['user']  = $this->db->get_where('user', ['email' =>
+            $this->session->userdata('email')])->row_array();
         $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
 
@@ -417,7 +411,7 @@ class User extends CI_Controller
             $this->load->view('templates/footer');
         } else {
 
-            $nama = $this->input->post('nama');
+            $nama  = $this->input->post('nama');
             $email = $this->input->post('email');
             $this->db->set('nama', $nama);
             $this->db->where('email', $email);
@@ -434,8 +428,8 @@ class User extends CI_Controller
     public function m_user()
     {
         $data['title'] = 'Management User';
-        $data['user'] = $this->db->get_where('user', ['email' =>
-        $this->session->userdata('email')])->row_array();
+        $data['user']  = $this->db->get_where('user', ['email' =>
+            $this->session->userdata('email')])->row_array();
 
         $data['tampilUser'] = $this->ModelNasabah->tampilNasabahAktif()->result();
         $this->load->view('templates/header', $data);
@@ -447,9 +441,9 @@ class User extends CI_Controller
 
     public function editRole()
     {
-        $id = $this->input->post('id');
+        $id      = $this->input->post('id');
         $role_id = $this->input->post('role_id');
-        $data = [
+        $data    = [
             'role_id' => $role_id,
         ];
         if ($this->ModelNasabah->editRole($data, $id)) {

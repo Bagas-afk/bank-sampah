@@ -46,10 +46,10 @@
     <!-- end navbar -->
 
     <!-- Jumbotron -->
+    <h1 class="pt-2 font-weight-bold" align="center">Bank Sampah Jawara</h1>
     <div class="jumbotron jumbotron-fluid alert-info">
         <div class="container">
             <table class="table-responsive">
-
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -57,14 +57,16 @@
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner" align="center">
-                        <div class="carousel-item active">
-                            <img src="<?= base_url('assets/img/photo1.jpg'); ?>" class="photo" alt="photo" height="360px">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="<?= base_url('assets/img/photo2.jpg') ?>" class="photo" alt="photo" height="360px">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="<?= base_url('assets/img/photo1.jpg') ?>" class="photo" alt="photo" height="360px">
+                        <div class="img-responsive">
+                            <div class="carousel-item active">
+                                <img src="<?= base_url('assets/img/photo4.jpeg'); ?>" class="photo" style="height:400px; width:700px;" alt="photo">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="<?= base_url('assets/img/photo3.jpeg') ?>" class="photo" style="height:400px; width:700px;" alt="photo">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="<?= base_url('assets/img/photo1.jpg') ?>" class="photo" style="height:400px; width:700px;" alt="photo">
+                            </div>
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -93,11 +95,14 @@
             <div class="row">
                 <div class="col-sm-4 offset-sm-2 ">
                     <h4 align="center">Visi</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor impedit omnis eaque officiis incidunt eum facilis quaerat ipsam dolorum nam? Fugiat, recusandae. Dicta molestias deserunt quod vitae eaque, blanditiis reprehenderit.</p>
+                    <li style="font-size: large;"> Terciptanya masyarakat sawah baru yang mandiri, sejahtera dan menciptakan lingkungan yang bersih.</li>
+
                 </div>
                 <div class="col-sm-4 ">
                     <h4 align="center">Misi</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor impedit omnis eaque officiis incidunt eum facilis quaerat ipsam dolorum nam? Fugiat, recusandae. Dicta molestias deserunt quod vitae eaque, blanditiis reprehenderit.</p>
+                    <li style="font-size: large;">Meningkatkan kualitas Sumber Daya masnusia yang profesional, berbudaya dan berintegritas tinggi.</li>
+                    <li style="font-size: large;">Meningkatkan kualitas dan Kuantitas Insfrastruktur Daerah untuk Pemenuhan Pelayanan Publik.</li>
+
                 </div>
             </div>
         </div>
@@ -196,9 +201,10 @@
                 </div>
             </div>
         </div>
-        <hr border=1>
+        <hr border="2">
+        </hr>
         <div class="copyright text-center">
-            <h6>Copyright &copy; <a href="<?= base_url('home') ?>">Bank Sampah 2020 </a>All rights reserved | This template Remake by Bagas Kurniawan</h6>
+            <h6>Copyright &copy; Bank Sampah 2020 All rights reserved | This template Remake by Bagas Kurniawan</h6>
         </div>
     </footer>
     <!-- End of Footer -->

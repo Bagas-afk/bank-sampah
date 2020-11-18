@@ -21,6 +21,37 @@
 // }
 
 
+var ctx = document.getElementById("myPieChart1");
+var myPieChart = new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: ["Transaksi", "Setoran"],
+    datasets: [{
+      data: [50, 50],
+      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+      hoverBorderColor: "rgba(234, 236, 244, 1)",
+    }],
+  },
+  options: {
+    maintainAspectRatio: false,
+    tooltips: {
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: false,
+      caretPadding: 10,
+    },
+    legend: {
+      display: false
+    },
+    cutoutPercentage: 80,
+  },
+});
+
 
 // $('.page-scroll').on('click', function(e){
 
@@ -35,6 +66,55 @@
 // });
 
 $(document).ready(function(){
+	
+	$('#tUser').change(function(){
+		var tUser = document.getElementById('tUser').value
+		$.ajax({
+			url : '/bank-sampah/user/tampilDiagram' + tUser,
+			method: "GET",
+			dataType : 'json',
+			success: function(data) {
+				console.log(data);
+				// var label = [];
+				// var value = [];
+				// for (var i in data) {
+				// 	label.push(data[i].tanggal_transaksi);
+				// 	value.push(data[i].jumlah_subtotal);
+				// }
+				var ctx = document.getElementById("myPieChart1");
+				var myPieChart1 = new Chart(ctx, {
+					type: 'pie',
+					data: {
+					  labels: ["Transaksi", "Setoran",],
+					  datasets: [{
+						data: [50, 50],
+						backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+						hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+						hoverBorderColor: "rgba(234, 236, 244, 1)",
+					  }],
+					},
+					options: {
+					  maintainAspectRatio: false,
+					  tooltips: {
+						backgroundColor: "rgb(255,255,255)",
+						bodyFontColor: "#858796",
+						borderColor: '#dddfeb',
+						borderWidth: 1,
+						xPadding: 15,
+						yPadding: 15,
+						displayColors: false,
+						caretPadding: 10,
+					  },
+					  legend: {
+						display: false
+					  },
+					  cutoutPercentage: 80,
+					},
+				})
+			}
+		});
+	})
+
 	$('#tgl_cetak').change(function(){
 		var tgl_cetak = document.getElementById('tgl_cetak').value
 		$.ajax({
@@ -147,4 +227,6 @@ function tampilSampah() {
 // function tampilSetoranNasabah(){
 // 	var idNasabah = document.getElementById('id_nasabah').value
 // }
-
+$(document).ready(function() {
+	
+});

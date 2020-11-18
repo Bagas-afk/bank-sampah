@@ -119,6 +119,13 @@ class User extends CI_Controller
         echo json_encode($data);
     }
 
+    function tampilDiagram($id)
+    {
+        $id = $this->uri->segment(3);
+        $data = $this->ModelSetor->cari_data_transaksi($id)->result_array();
+        echo json_encode($data, $id);
+    }
+
     function tampilDataSampah($id)
     {
         $id = $this->uri->segment(3);

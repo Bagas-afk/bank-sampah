@@ -120,7 +120,7 @@ class User extends CI_Controller
     {
         $setor = $this->ModelSetor->dataTransaksi(["tipe_transaksi" => "Setoran sampah"])->num_rows();
         $wd    = $this->ModelSetor->dataTransaksi(["tipe_transaksi" => "Withdraw"])->num_rows();
-        echo json_encode($setor . $wd);
+        echo json_encode($setor . "," . $wd);
     }
 
     public function tampilDataSampah($id)

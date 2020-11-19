@@ -126,18 +126,7 @@ $(document).ready(function () {
 });
 
 function tampilCetak() {
-	var tgl_cetak = document.getElementById('tgl_cetak').value
-	$.ajax({
-		url : '/bank-sampah/user/tampilCetak/' + tgl_cetak,
-		type : 'get',
-		dataType : 'json',
-		success: function(data){
-			console.log(data);
-		}
-	})
-}
-var tgl_cetak = document.getElementById("tgl_cetak");
-if (tgl_cetak.value != "") {
+	
 	$.ajax({
 		url: "/bank-sampah/user/tampilCetak/" + tgl_cetak,
 		type: "get",

@@ -116,13 +116,6 @@ class User extends CI_Controller
         echo json_encode($data);
     }
 
-    public function tampilDiagram()
-    {
-        $setor = $this->ModelSetor->dataTransaksi(["tipe_transaksi" => "Setoran sampah"])->num_rows();
-        $wd    = $this->ModelSetor->dataTransaksi(["tipe_transaksi" => "Withdraw"])->num_rows();
-        $data  = [$setor, $wd];
-        echo json_encode($data);
-    }
 
     public function tampilDataSampah($id)
     {

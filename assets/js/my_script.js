@@ -125,8 +125,6 @@ $(document).ready(function () {
 	});
 });
 
-function tampilCetak() {
-	
 	$.ajax({
 		url: "/bank-sampah/user/tampilCetak/" + tgl_cetak,
 		type: "get",

@@ -116,7 +116,6 @@ class User extends CI_Controller
         echo json_encode($data);
     }
 
-
     public function tampilDataSampah($id)
     {
         $id   = $this->uri->segment(3);

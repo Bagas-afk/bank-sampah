@@ -184,19 +184,20 @@
                             <span><i class="fas fa-mobile fa-2x mt-2 ml-1"></i></span>
                         </div>
                         <div class="col-sm-6">
-                            <label class="pt-2">0877 7336 3785</label>
+                            <label class="pt-2">0877 7336 3785 (Admin)</label>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-2">
                     <div class="row">
-                        <h5 class="text-reset">Follow me</h5>
-                        <label class="">Jangan lupa follow sosial media kami</label>
+                        <h5 class="text-reset">Follow us on social media</h5>
+                        <label class="pt-2">Dapatkan info dengan mengikuti sosial media kami!</label>
                     </div>
                     <div class="row">
-                        <a href=""><i class="fab fa-facebook fa-2x"></i></a>
-                        <a href="https://www.instagram.com/banksampahjawara/" target="_blank" rel="nofollow" title="bank sampah"><i class="fab fa-instagram fa-2x ml-3"></i></a>
-                        <a href=""><i class="fab fa-twitter fa-2x ml-3"></i></a>
+                        <a href="https://www.instagram.com/banksampahjawara/" target="_blank" rel="nofollow" title="bank sampah"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a><i class="fab fa-facebook fa-2x ml-3"></i></a>
+                        <a><i class="fab fa-twitter fa-2x ml-3"></i></a>
+                        <a><i class="fab fa-pinterest fa-2x ml-3"></i></a>
                     </div>
                 </div>
             </div>

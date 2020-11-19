@@ -124,8 +124,7 @@ $(document).ready(function () {
 		document.getElementById("hasil").value = hrg_sampah * jumlahSampah;
 	});
 });
-var tgl_cetak = document.getElementById("tgl_cetak").value;
-if (tgl_cetak != "") {
+
 	$.ajax({
 		url: "/bank-sampah/user/tampilCetak/" + tgl_cetak,
 		type: "get",
@@ -152,17 +151,7 @@ if (tgl_cetak != "") {
 		"/bank-sampah/c_excel/cetak/" + tgl_cetak;
 }
 
-// function tampilCetak() {
-// 	var tgl_cetak = document.getElementById('tgl_cetak').value
-// 	$.ajax({
-// 		url : '/bank-sampah/user/tampilCetak/' + tgl_cetak,
-// 		type : 'get',
-// 		dataType : 'json',
-// 		success: function(data){
-// 			console.log(data);
-// 		}
-// 	})
-// }
+
 
 function tampilSampah() {
 	var idHarga = document.getElementById("namaSampah").value;

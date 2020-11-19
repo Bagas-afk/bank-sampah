@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2020 at 05:26 PM
+-- Generation Time: Nov 19, 2020 at 07:36 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.2.24
 
@@ -44,7 +44,7 @@ INSERT INTO `tb_harga` (`id`, `jenis_sampah`, `harga`, `satuan`, `tanggal`) VALU
 (32, 'Botol Bersih', '4000', 'Kg', '2020-11-06'),
 (33, 'Botol Kotor', '2000', 'Kg', '2020-11-06'),
 (34, 'Botol Warna', '1500', 'Kg', '2020-11-06'),
-(35, 'Gelas Bersih', '5000', 'Kg', '2020-11-06'),
+(35, 'Gelas Bersih', '500', 'Kg', '2020-11-06'),
 (36, 'Gelas Kotor', '2000', 'Kg', '2020-11-06'),
 (37, 'Gelas Warna', '1000', 'Kg', '2020-11-06'),
 (38, 'Kardus', '1000', 'Kg', '2020-11-06'),
@@ -332,7 +332,46 @@ INSERT INTO `tb_logs` (`id`, `keterangan`, `datetime`, `id_user`) VALUES
 (329, 'logout', '2020-11-18 17:31:32', 8),
 (330, 'login', '2020-11-18 18:15:43', 8),
 (331, 'logout', '2020-11-18 21:11:09', 8),
-(332, 'login', '2020-11-18 23:24:46', 8);
+(332, 'login', '2020-11-18 23:24:46', 8),
+(333, 'logout', '2020-11-18 23:28:54', 8),
+(334, 'login', '2020-11-18 23:33:10', 43),
+(335, 'logout', '2020-11-18 23:35:33', 43),
+(336, 'login', '2020-11-19 00:36:26', 8),
+(337, 'logout', '2020-11-19 00:37:20', 8),
+(338, 'login', '2020-11-19 00:37:27', 43),
+(339, 'logout', '2020-11-19 00:37:49', 43),
+(340, 'login', '2020-11-19 00:37:56', 8),
+(341, 'logout', '2020-11-19 00:54:46', 8),
+(342, 'login', '2020-11-19 00:54:57', 43),
+(343, 'logout', '2020-11-19 00:55:17', 43),
+(344, 'login', '2020-11-19 00:55:26', 8),
+(345, 'logout', '2020-11-19 01:05:07', 8),
+(346, 'login', '2020-11-19 14:42:43', 8),
+(347, 'logout', '2020-11-19 15:31:58', 8),
+(348, 'login', '2020-11-19 15:32:41', 42),
+(349, 'login', '2020-11-19 15:33:03', 42),
+(350, 'logout', '2020-11-19 15:33:30', 42),
+(351, 'login', '2020-11-19 15:34:47', 8),
+(352, 'logout', '2020-11-19 15:51:55', 8),
+(353, 'login', '2020-11-19 20:52:31', 8),
+(354, 'login', '2020-11-19 21:22:06', 8),
+(355, 'logout', '2020-11-19 21:22:51', 8),
+(356, 'login', '2020-11-19 21:28:48', 8),
+(357, 'logout', '2020-11-19 21:39:33', 8),
+(358, 'login', '2020-11-19 21:39:43', 43),
+(359, 'logout', '2020-11-19 21:44:56', 43),
+(360, 'login', '2020-11-19 21:45:00', 8),
+(361, 'logout', '2020-11-19 22:00:54', 8),
+(362, 'login', '2020-11-19 22:02:16', 8),
+(363, 'logout', '2020-11-19 22:08:40', 8),
+(364, 'login', '2020-11-20 01:09:53', 8),
+(365, 'logout', '2020-11-20 01:15:43', 8),
+(366, 'login', '2020-11-20 01:17:43', 42),
+(367, 'logout', '2020-11-20 01:18:27', 42),
+(368, 'login', '2020-11-20 01:29:27', 8),
+(369, 'logout', '2020-11-20 01:32:38', 8),
+(370, 'login', '2020-11-20 01:32:43', 43),
+(371, 'logout', '2020-11-20 01:34:23', 43);
 
 -- --------------------------------------------------------
 
@@ -363,7 +402,16 @@ INSERT INTO `tb_transaksi` (`id`, `id_user`, `sebelum_transaksi`, `sesudah_trans
 (79, 43, 25000, 59400, 34400, 'Setoran sampah', '2020-02-09', 'Berhasil setor', '8.6', 32),
 (81, 43, 59400, 60075, 675, 'Setoran sampah', '2020-02-09', 'Berhasil setor', '0.15', 47),
 (82, 43, 60075, 60795, 720, 'Setoran sampah', '2020-02-09', 'Berhasil setor', '3.6', 44),
-(90, 43, 68295, 72295, 4000, 'Setoran sampah', '2020-11-18', 'Berhasil setor', '2', 33);
+(90, 43, 68295, 72295, 4000, 'Setoran sampah', '2020-11-18', 'Berhasil setor', '2', 33),
+(95, 43, 72295, 70073, 2222, 'Withdraw', '2020-11-20', 'Berhasil', '', 0),
+(96, 43, 70073, 50073, 20000, 'Withdraw', '2020-11-28', 'Berhasil', '', 0),
+(103, 42, 25675, 31675, 6000, 'Setoran sampah', '2020-11-19', 'Berhasil setor', '4', 34),
+(104, 42, 31675, 33675, 2000, 'Setoran sampah', '2020-11-19', 'Berhasil setor', '2', 37),
+(105, 43, 70073, 82573, 12500, 'Setoran sampah', '2020-11-19', 'Berhasil setor', '5', 48),
+(107, 43, 128573, 132573, 4000, 'Setoran sampah', '2020-11-19', 'Berhasil setor', '2', 33),
+(108, 44, 0, 16000, 16000, 'Setoran sampah', '2020-11-20', 'Berhasil setor', '4', 32),
+(109, 42, 33675, 41675, 8000, 'Setoran sampah', '2020-11-20', 'Berhasil setor', '2', 32),
+(110, 42, 41675, 63675, 22000, 'Setoran sampah', '2020-11-20', 'Berhasil setor', '22', 37);
 
 -- --------------------------------------------------------
 
@@ -400,9 +448,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `nik`, `nama`, `tanggal_lahir`, `jenis_kelamin`, `no_telpon`, `email`, `password`, `agama`, `alamat`, `kecamatan`, `kelurahan`, `status`, `pekerjaan`, `role_id`, `date_created`, `image`, `saldo`, `file`, `status_akun`) VALUES
 (8, '2147483647', 'ADMIN', '1982-05-03', 'perempuan', '2147483647', 'hildauser@gmail.com', '$2y$10$Vui7//eSMKa18K1nODJ7GOu20SjknRMRFm6ihwpOZau/Uzj3QvTT6', 'Islam', 'Jalanin aja yang ada', '', '0', 'kawin', 'Pengangguran', 1, '0000-00-00', 'default.png', 0, '', 1),
-(42, '3674045304840008', 'ARSIH', '1984-04-13', 'Perempuan', '089656352615', 'arsih@gmail.com', '$2y$10$sHFCimFNFuZslmRtHktg.OuETq.RTQLNCXx64X5xcHwuYSFlRk9Fi', 'islam', 'Jl. Cendrawasih V', 'Ciputat', 'Sawah Baru', 'kawin', 'Mengurus Rumah Tangga', 2, '2020-11-06', 'default.png', 675, '32aa35150ac3b0db49a7251ec1972a80.jpeg', 1),
-(43, '3674045112680003', 'LILIS SURYANI', '1969-12-11', 'Perempuan', '082114567265', 'lilis@gmail.com', '$2y$10$mwDSVEZA7DpHFYzFjDQeK.V1VD5hW2RskVrw9qmb8cArDgizhDleS', 'islam', 'JL. CENDRAWASIH 1 NO. 68', 'CIPUTAT', 'SAWAH BARU', 'kawin', 'MENGURUS RUMAH TANGGA', 2, '2020-11-09', 'default.png', 72295, '7eb9a446b24f76378bfdd65e68d913dd.jpeg', 1),
-(44, '3674040807740006', 'MUKIN', '1974-07-08', 'laki-laki', '082128762678', 'mukin@gmail.com', '$2y$10$luOD5F5OdR76StD1aE0vmuMFnqfCFToRJpAUjGiafcp7ipqho/nWu', 'islam', 'JL. CENDRAWASIH', 'CIPUTAT', 'SAWAH BARU', 'kawin', 'WIRASWASTA', 2, '2020-11-09', 'default.png', 0, '5606bde9aa0a201d586bdd0b2feed82b.jpeg', 1);
+(42, '3674045304840008', 'ARSIH', '1984-04-13', 'Perempuan', '089656352615', 'arsih@gmail.com', '$2y$10$sHFCimFNFuZslmRtHktg.OuETq.RTQLNCXx64X5xcHwuYSFlRk9Fi', 'islam', 'Jl. Cendrawasih V', 'Ciputat', 'Sawah Baru', 'kawin', 'Mengurus Rumah Tangga', 2, '2020-11-06', 'default.png', 63675, '32aa35150ac3b0db49a7251ec1972a80.jpeg', 1),
+(43, '3674045112680003', 'LILIS SURYANI', '1969-12-11', 'Perempuan', '082114567265', 'lilis@gmail.com', '$2y$10$mwDSVEZA7DpHFYzFjDQeK.V1VD5hW2RskVrw9qmb8cArDgizhDleS', 'islam', 'JL. CENDRAWASIH 1 NO. 68', 'CIPUTAT', 'SAWAH BARU', 'kawin', 'MENGURUS RUMAH TANGGA', 2, '2020-11-09', 'default.png', 132573, '7eb9a446b24f76378bfdd65e68d913dd.jpeg', 1),
+(44, '3674040807740006', 'MUKIN', '1974-07-08', 'laki-laki', '082128762678', 'mukin@gmail.com', '$2y$10$luOD5F5OdR76StD1aE0vmuMFnqfCFToRJpAUjGiafcp7ipqho/nWu', 'islam', 'JL. CENDRAWASIH', 'CIPUTAT', 'SAWAH BARU', 'kawin', 'WIRASWASTA', 2, '2020-11-09', 'default.png', 16000, '5606bde9aa0a201d586bdd0b2feed82b.jpeg', 1);
 
 --
 -- Indexes for dumped tables
@@ -448,13 +496,13 @@ ALTER TABLE `tb_harga`
 -- AUTO_INCREMENT for table `tb_logs`
 --
 ALTER TABLE `tb_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=333;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=372;
 
 --
 -- AUTO_INCREMENT for table `tb_transaksi`
 --
 ALTER TABLE `tb_transaksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 
 --
 -- AUTO_INCREMENT for table `user`

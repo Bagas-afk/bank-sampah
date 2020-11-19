@@ -69,7 +69,7 @@
                     </div>
                     <div class="mt-4 text-center large">
                         <span class="mr-2">
-                            <i class="fas fa-circle text-primary"></i> Transaksi
+                            <i class="fas fa-circle text-primary"></i> Withdraw
                         </span>
                         <span class="mr-2">
                             <i class="fas fa-circle text-success"></i> Setoran

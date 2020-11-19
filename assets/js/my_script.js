@@ -124,8 +124,8 @@ $(document).ready(function () {
 		document.getElementById("hasil").value = hrg_sampah * jumlahSampah;
 	});
 });
-var tgl_cetak = document.getElementById("tgl_cetak");
-if (tgl_cetak.value != "") {
+var tgl_cetak = document.getElementById("tgl_cetak").value;
+if (tgl_cetak != "") {
 	$.ajax({
 		url: "/bank-sampah/user/tampilCetak/" + tgl_cetak,
 		type: "get",

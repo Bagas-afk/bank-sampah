@@ -9,7 +9,7 @@
     <div class="col-sm-6 justify-content-start">
         <?= $this->session->flashdata('message'); ?>
     </div>
-    <div class="table">
+    <div class="mt-3">
         <table class="table">
             <form action="<?= base_url('user/tambahSetor') ?>" method="post">
                 <div class="form-group row">
@@ -26,8 +26,8 @@
 
         </table>
 
-        <table class="table">
-            <thead>
+        <table class="table table-border">
+            <thead class="thead-light">
                 <th style="width: 250px;">Jenis sampah</th>
                 <th>Satuan</th>
                 <th>Harga Sampah</th>
@@ -64,7 +64,7 @@
         </div>
 
         <div class="table-responsive">
-            <table class="table table-bordered" id="datatable" data-info="false">
+            <table class="table table-bordered" id="datatable">
                 <thead class="thead-light">
                     <th>No</th>
                     <th>Nama Nasabah</th>
@@ -77,7 +77,7 @@
                 <tbody id="isi_transaksi"></tbody>
             </table>
         </div>
-        <form action="<?= base_url('user/tambahSetor') ?>" method="post">
+        <form action="<?= base_url('user/tambahSetor') ?>" method="post" class="mt-5">
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Pilih Tanggal</label>
                 <div class="col-sm-4">

@@ -19,7 +19,7 @@ class User extends CI_Controller
     {
 
         $data['user'] = $this->db->get_where('user', ['email' =>
-            $this->session->userdata('email')])->row_array();
+        $this->session->userdata('email')])->row_array();
 
         $data['title']  = 'Dashboard';
         $data['query']  = $this->ModelNasabah->countUser();
@@ -48,7 +48,7 @@ class User extends CI_Controller
     public function nasabah()
     {
         $data['user'] = $this->db->get_where('user', ['email' =>
-            $this->session->userdata('email')])->row_array();
+        $this->session->userdata('email')])->row_array();
 
         $data['title']        = 'Form Data Nasabah';
         $data['data_nasabah'] = $this->ModelNasabah->tampilNasabah()->result();
@@ -94,7 +94,7 @@ class User extends CI_Controller
     public function setor()
     {
         $data['user'] = $this->db->get_where('user', ['email' =>
-            $this->session->userdata('email')])->row_array();
+        $this->session->userdata('email')])->row_array();
 
         $data['nasabah'] = $this->ModelNasabah->tampilNasabahAktif()->result();
         $data['sampah']  = $this->ModelSampah->tampilSampah()->result();
@@ -134,7 +134,7 @@ class User extends CI_Controller
     public function sampah()
     {
         $data['user'] = $this->db->get_where('user', ['email' =>
-            $this->session->userdata('email')])->row_array();
+        $this->session->userdata('email')])->row_array();
 
         $data['title']       = 'Form Data Sampah';
         $data['data_sampah'] = $this->ModelSampah->tampilSampah()->result();
@@ -148,7 +148,7 @@ class User extends CI_Controller
     public function verifikasi()
     {
         $data['user'] = $this->db->get_where('user', ['email' =>
-            $this->session->userdata('email')])->row_array();
+        $this->session->userdata('email')])->row_array();
         $data['tampilPenarikan'] = $this->ModelNasabah->tampilPenarikan()->result();
         $data['title']           = 'Verifikasi Penarikan';
 
@@ -191,7 +191,7 @@ class User extends CI_Controller
     public function tambahnasabah()
     {
         $data['user'] = $this->db->get_where('user', ['email' =>
-            $this->session->userdata('email')])->row_array();
+        $this->session->userdata('email')])->row_array();
         $this->form_validation->set_rules('nik', 'nik', 'required|trim|numeric|max_length[16]|min_length[16]|is_unique[user.nik]', [
             'numeric' => 'Harus dengan angka!', 'max_length' => 'Harus 16 digit!', 'min_length' => 'Harus 16 digit!', 'is_unique' => 'This KTP has already registred!',
         ]);
@@ -397,7 +397,7 @@ class User extends CI_Controller
     {
         $data['title'] = 'Edit Profile';
         $data['user']  = $this->db->get_where('user', ['email' =>
-            $this->session->userdata('email')])->row_array();
+        $this->session->userdata('email')])->row_array();
         $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
 
@@ -429,7 +429,7 @@ class User extends CI_Controller
     {
         $data['title'] = 'Management User';
         $data['user']  = $this->db->get_where('user', ['email' =>
-            $this->session->userdata('email')])->row_array();
+        $this->session->userdata('email')])->row_array();
 
         $data['tampilUser'] = $this->ModelNasabah->tampilNasabahAktif()->result();
         $this->load->view('templates/header', $data);

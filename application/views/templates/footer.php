@@ -3,7 +3,7 @@
     <!-- <div class="container-fluid">
         <div class="row">
             <div class="col-md-2 ml-5">
-                <img src="<?=base_url('assets/img/logo.png'); ?>" style="width: 120px; height: 90px; " alt="logo">
+                <img src="<?= base_url('assets/img/logo.png'); ?>" style="width: 120px; height: 90px; " alt="logo">
             </div>
             <div class="col-md-3">
                 <div class="col-md-2">
@@ -78,31 +78,28 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="<?=base_url('auth/logout'); ?>">Logout</a>
+                <a class="btn btn-primary" href="<?= base_url('auth/logout'); ?>">Logout</a>
             </div>
         </div>
     </div>
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="<?=base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
-<script src="<?=base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="<?=base_url('assets/'); ?>vendor/chart.js/Chart.js"></script>
+<script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
+<script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?= base_url('assets/'); ?>vendor/chart.js/Chart.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="<?=base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
-<script src="<?=base_url('assets/'); ?>datatables/datatables.js"></script>
-<script type="text/javascript" src="<?=base_url('assets/'); ?>datatables/datatables.min.js"></script>
+<script src="<?= base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="<?= base_url('assets/'); ?>datatables/datatables.js"></script>
+<script type="text/javascript" src="<?= base_url('assets/'); ?>datatables/datatables.min.js"></script>
 
 
 <!-- Custom scripts for all pages-->
-<script src="<?=base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
-<script src="<?=base_url('assets/'); ?>js/my_script.js"></script>
-<script src="<?=base_url('assets/'); ?>js/demo/chart-area-demo.js"></script>
-<script src="<?=base_url('assets/'); ?>js/demo/chart-pie-demo.js"></script>
-<script src="<?=base_url('assets/'); ?>js/demo/chart-bar-demo.js"></script>
-
-<script src="<?=base_url('assets/') ?>js/mychart.js"></script>
+<script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
+<script src="<?= base_url('assets/'); ?>js/my_script.js"></script>
+<script src="<?= base_url('assets/') ?>js/mychart.js"></script>
 
 </body>
+
 </html>

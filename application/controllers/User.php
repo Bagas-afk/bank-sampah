@@ -123,6 +123,13 @@ class User extends CI_Controller
         echo json_encode($data);
     }
 
+    public function tampilDiagram()
+    {
+        $setor = $this->ModelSetor->dataTransaksi(["tipe_transaksi" => "Setoran sampah"])->num_rows();
+        $wd    = $this->ModelSetor->dataTransaksi(["tipe_transaksi" => "Withdraw"])->num_rows();
+        echo json_encode($setor . $wd);
+    }
+    
     public function sampah()
     {
         $data['user'] = $this->db->get_where('user', ['email' =>

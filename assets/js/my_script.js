@@ -149,7 +149,6 @@ $(document).ready(function () {
 	});
 	document.getElementById("tombol_cetak").href =
 		"/bank-sampah/c_excel/cetak/" + tgl_cetak;
-}
 
 
 

@@ -102,7 +102,6 @@ class Auth extends CI_Controller
             $data['title'] = 'Registrasi Nasabah';
             $this->load->view('templates/header', $data);
             $this->load->view('auth/registration');
-            $this->load->view('templates/footer');
         } else {
             if ($_FILES['file']['name']) {
                 $data = [

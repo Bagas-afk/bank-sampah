@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="card o-hidden border-0 shadow-lg my-5 col-lg-7 mx-auto">
+  <div class="card border-0 shadow-lg my-5 col-lg-7 mx-auto">
     <div class="card-body p-0">
       <!-- Nested Row within Card Body -->
       <div class="row">
@@ -73,7 +73,7 @@
               <div class="form-group row">
                 <label for="agama" class="col-sm-4 col-form-label">Agama</label>
                 <div class="col-sm-8">
-                  <select id="inputState" name="agama" class="form-control">
+                  <select name="agama" class="form-control">
                     <option selected>Choose...</option>
                     <option value="islam">Islam</option>
                     <option value="kristen">Kristen</option>
@@ -132,19 +132,19 @@
                   <input class="form-control-file" type="file" id="image" name="file">
                 </div>
               </div>
-          </div>
-          <button type="submit" class="btn btn-primary btn-user btn-block">
-            Register Account
-          </button>
-          </form>
-          <hr>
-          <div class="text-center">
-            <label for="">Sudah mempunyai akun?</label><a class="medium" href="<?= base_url('auth'); ?>"> Login!</a>
-          </div>
-          <div class="text-center">
-            <a class="medium" href="<?= base_url('auth/forgot'); ?>">Lupa Password!</a>
+              <button type="submit" class="btn btn-primary btn-user btn-block">
+                Registrasi Akun
+              </button>
+              <hr>
+              <div class="text-center">
+                <label for="">Sudah mempunyai akun?</label><a class="medium" href="<?= base_url('auth'); ?>"> Login!</a>
+              </div>
+              <div class="text-center">
+                <a class="medium" href="<?= base_url('auth/forgot'); ?>">Lupa Password!</a>
+              </div>
           </div>
         </div>
+        </form>
       </div>
     </div>
   </div>

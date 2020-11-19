@@ -69,42 +69,42 @@
                                                 <div class="row">
                                                     <div class="col-6 col-sm-6">
                                                         <label for="exampleFormControlInput1">Nama</label>
-                                                        <input type="text" class="form-control mb-3" id="exampleFormControlInput1" value="<?= $nasabah->nama ?>" required name="nama" readonly>
-                                                        <input type="hidden" class="form-control mb-3" readonly id="exampleFormControlInput1" value="<?= $nasabah->id ?>" name="id">
+                                                        <input type="text" class="form-control mb-3" value="<?= $nasabah->nama ?>" required name="nama" readonly>
+                                                        <input type="hidden" class="form-control mb-3" readonly value="<?= $nasabah->id ?>" name="id">
                                                     </div>
                                                     <div class="col-6 col-sm-6">
                                                         <label for="exampleFormControlInput1">No Telpon</label>
-                                                        <input type="number" class="form-control mb-3" id="exampleFormControlInput1" value="<?= $nasabah->no_telpon ?>" readonly name="no_telpon">
+                                                        <input type="number" class="form-control mb-3" value="<?= $nasabah->no_telpon ?>" readonly name="no_telpon">
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-6 col-sm-6">
                                                         <label for="exampleFormControlInput1">Email</label>
-                                                        <input type="text" class="form-control mb-3" id="exampleFormControlInput1" readonly value="<?= $nasabah->email ?>" readonly>
+                                                        <input type="text" class="form-control mb-3" readonly value="<?= $nasabah->email ?>" readonly>
                                                     </div>
                                                     <div class="col-6 col-sm-6">
                                                         <label for="exampleFormControlInput1">NIK</label>
-                                                        <input type="number" class="form-control mb-3" id="exampleFormControlInput1" readonly value="<?= $nasabah->nik ?>" readonly>
+                                                        <input type="number" class="form-control mb-3" readonly value="<?= $nasabah->nik ?>" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-6 col-sm-6">
                                                         <label for="exampleFormControlInput1">Alamat</label>
-                                                        <input name="alamat" id="alamat" class="form-control mb-3" value="<?= $nasabah->alamat ?>" name="alamat" readonly></input>
+                                                        <input name="alamat" class="form-control mb-3" value="<?= $nasabah->alamat ?>" name="alamat" readonly></input>
                                                     </div>
                                                     <div class="col-6 col-sm-6">
                                                         <label for="exampleFormControlInput1">Status</label>
-                                                        <input type="text" class="form-control mb-3" value="<?= $nasabah->status ?>" name="status" readonly id="exampleFormControlInput1">
+                                                        <input type="text" class="form-control mb-3" value="<?= $nasabah->status ?>" name="status" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-6 col-sm-6">
                                                         <label for="exampleFormControlInput1">Kecamatan</label>
-                                                        <input type="text" class="form-control mb-3" value="<?= $nasabah->kecamatan ?>" name="kecamatan" readonly id="exampleFormControlInput1">
+                                                        <input type="text" class="form-control mb-3" value="<?= $nasabah->kecamatan ?>" name="kecamatan" readonly>
                                                     </div>
                                                     <div class="col-6 col-sm-6">
                                                         <label for="exampleFormControlInput1">Kelurahan</label>
-                                                        <input type="text" class="form-control mb-3" value="<?= $nasabah->kelurahan ?>" name="kelurahan" readonly id="exampleFormControlInput1">
+                                                        <input type="text" class="form-control mb-3" value="<?= $nasabah->kelurahan ?>" name="kelurahan" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -138,22 +138,22 @@
                                                 <div class="row">
                                                     <div class="col-6 col-sm-6">
                                                         <label for="exampleFormControlInput1">Nama</label>
-                                                        <input type="text" class="form-control mb-3" id="exampleFormControlInput1" value="<?= $nasabah->nama ?>" required name="nama" readonly>
-                                                        <input type="hidden" class="form-control mb-3" readonly id="exampleFormControlInput1" value="<?= $nasabah->id ?>" name="id">
+                                                        <input type="text" class="form-control mb-3" value="<?= $nasabah->nama ?>" required name="nama" readonly>
+                                                        <input type="hidden" class="form-control mb-3" readonly value="<?= $nasabah->id ?>" name="id">
                                                     </div>
                                                     <div class="col-6 col-sm-6">
                                                         <label for="exampleFormControlInput1">No Telpon</label>
-                                                        <input type="number" class="form-control mb-3" id="exampleFormControlInput1" value="<?= $nasabah->no_telpon ?>" readonly name="no_telpon">
+                                                        <input type="number" class="form-control mb-3" value="<?= $nasabah->no_telpon ?>" readonly name="no_telpon">
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-6 col-sm-6">
                                                         <label for="exampleFormControlInput1">Email</label>
-                                                        <input type="text" class="form-control mb-3" id="exampleFormControlInput1" readonly value="<?= $nasabah->email ?>" readonly>
+                                                        <input type="text" class="form-control mb-3" readonly value="<?= $nasabah->email ?>" readonly>
                                                     </div>
                                                     <div class="col-6 col-sm-6">
                                                         <label for="exampleFormControlInput1">Alamat</label>
-                                                        <input name="alamat" id="alamat" class="form-control mb-3" value="<?= $nasabah->alamat ?>" name="alamat" readonly></input>
+                                                        <input name="alamat" class="form-control mb-3" value="<?= $nasabah->alamat ?>" name="alamat" readonly></input>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -189,22 +189,22 @@
                                                     <div class="row">
                                                         <div class="col-6 col-sm-6">
                                                             <label for="exampleFormControlInput1">Nama</label>
-                                                            <input type="text" class="form-control mb-3" readonly id="exampleFormControlInput1" value="<?= $nasabah->nama ?>" required name="nama">
-                                                            <input type="hidden" class="form-control mb-3" readonly id="exampleFormControlInput1" value="<?= $nasabah->id ?>" name="id">
+                                                            <input type="text" class="form-control mb-3" readonly value="<?= $nasabah->nama ?>" required name="nama">
+                                                            <input type="hidden" class="form-control mb-3" readonly value="<?= $nasabah->id ?>" name="id">
                                                         </div>
                                                         <div class="col-6 col-sm-6">
                                                             <label for="exampleFormControlInput1">No Telpon</label>
-                                                            <input type="number" class="form-control mb-3" id="exampleFormControlInput1" value="<?= $nasabah->no_telpon ?>" required name="no_telpon">
+                                                            <input type="number" class="form-control mb-3" value="<?= $nasabah->no_telpon ?>" required name="no_telpon">
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-6 col-sm-6">
                                                             <label for="exampleFormControlInput1">Email</label>
-                                                            <input type="text" class="form-control mb-3" id="exampleFormControlInput1" readonly value="<?= $nasabah->email ?>">
+                                                            <input type="text" class="form-control mb-3" readonly value="<?= $nasabah->email ?>">
                                                         </div>
                                                         <div class="col-6 col-sm-6">
                                                             <label for="exampleFormControlInput1">Alamat</label>
-                                                            <input name="alamat" id="alamat" class="form-control mb-3" value="<?= $nasabah->alamat ?>" name="alamat" readonly></input>
+                                                            <input name="alamat" class="form-control mb-3" value="<?= $nasabah->alamat ?>" name="alamat" readonly></input>
                                                         </div>
                                                     </div>
                                                 </div>

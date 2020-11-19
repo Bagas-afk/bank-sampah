@@ -46,7 +46,7 @@
                                                         <label for="exampleFormControlInput1">Role_id</label>
                                                     </div>
                                                     <div class="col-6">
-                                                        <input id="role_id" class="form-control" value="<?= $T->role_id ?>" name="role_id"></input>
+                                                        <input class="form-control" value="<?= $T->role_id ?>" name="role_id"></input>
                                                         <input name="id" class="form-control" value="<?= $T->id ?>" hidden></input>
                                                     </div>
                                                 </div>

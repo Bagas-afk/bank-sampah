@@ -62,14 +62,14 @@
                                         <div class="modal-body">
                                             <form action="<?= base_url('user/editSampah') ?>" method="post">
                                                 <div class="form-group">
-                                                    <label for="inputEmail4">Jenis Sampah</label>
-                                                    <input name="jenis_sampah" type="text" class="form-control" readonly id="inputEmail4" value="<?= $sampah->jenis_sampah ?>">
-                                                    <input type="hidden" class="form-control mb-3" readonly id="exampleFormControlInput1" value="<?= $sampah->id ?>" name="id">
+                                                    <label for="">Jenis Sampah</label>
+                                                    <input name="jenis_sampah" type="text" class="form-control" readonly value="<?= $sampah->jenis_sampah ?>">
+                                                    <input type="hidden" class="form-control mb-3" readonly value="<?= $sampah->id ?>" name="id">
                                                 </div>
-                                                <label for="inputEmail4">Harga</label>
-                                                <input name="harga" type="number" class="form-control" id="harga" value="<?= $sampah->harga ?>">
-                                                <label for="inputEmail4">Satuan</label>
-                                                <input name="satuan" type="text" class="form-control" id="inputEmail4" readonly value="<?= $sampah->satuan ?>">
+                                                <label for="">Harga</label>
+                                                <input name="harga" type="number" class="form-control" value="<?= $sampah->harga ?>">
+                                                <label for="">Satuan</label>
+                                                <input name="satuan" type="text" class="form-control" readonly value="<?= $sampah->satuan ?>">
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -111,7 +111,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Tambah data barang</h5>
+                    <h5 class="modal-title" id="tambahdatasampah">Tambah data barang</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -119,12 +119,12 @@
 
                 <form action="<?= base_url('user/tambahSampah') ?>" method="post">
                     <div class="modal-body">
-                        <label for="inputEmail4">Nama Barang</label>
+                        <label for="nama">Nama Barang</label>
                         <input name="jenis_sampah" type="text" class="form-control" required>
-                        <label for="inputEmail4">Harga</label>
+                        <label for="harga">Harga</label>
                         <input name="harga" type="text" class="form-control" required>
                         <div class="form-group">
-                            <label for="inputEmail4">Satuan</label>
+                            <label for="satuan">Satuan</label>
                             <select name="satuan" type="text" class="form-control" required>
                                 <option selected>Choose...</option>
                                 <option>Kg</option>

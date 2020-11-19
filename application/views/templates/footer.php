@@ -1,54 +1,6 @@
 <!-- Footer -->
 <footer class="sticky-footer alert-primary mt-5" style="position: sticky; height: 100px; bottom: 0; width: 100%;">
-    <!-- <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2 ml-5">
-                <img src="<?= base_url('assets/img/logo.png'); ?>" style="width: 120px; height: 90px; " alt="logo">
-            </div>
-            <div class="col-md-3">
-                <div class="col-md-2">
-                    <h5 for="alamat" class="text-reset"> Alamat </h5>
-                </div>
-                <div class="col-md-10">
-                    <label> Jl. Cendrawasih Raya RT.004/RW.02 No. 16 Kel. Sawah Baru, Ciputat, Tanggerang Selatan </label>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="row">
-                    <h5 class="text-reset ml-2">Contact us</h5>
-                </div>
-                <div class="row">
-                    <div class="col-sm-1 pr-4">
-                        <span><i class="fas fa-envelope-square fa-2x"></i></span>
-                    </div>
-                    <div class="col-sm-4">
-                        <label class="pt-1">banksampah@gmail.com</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-1">
-                        <span><i class="fas fa-mobile fa-2x mt-2 ml-1"></i></span>
-                    </div>
-                    <div class="col-sm-6">
-                        <label class="pt-2">0877 7336 3785</label>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="row">
-                    <h5 class="text-reset">Follow me</h5>
-                    <label class="">Jangan lupa follow sosial media kami</label>
-                </div>
-                <div class="row">
-                    <a href=""><i class="fab fa-facebook fa-2x"></i></a>
-                    <a href="https://www.instagram.com/banksampahjawara/" target="_blank" rel="nofollow" title="bank sampah"><i class="fab fa-instagram fa-2x ml-3"></i></a>
-                    <a href=""><i class="fab fa-twitter fa-2x ml-3"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <hr border="2">
-    </hr> -->
+
     <div class="copyright text-center">
         <h6>Copyright &copy; Bank Sampah 2020 All rights reserved | This template Remake by Bagas Kurniawan</h6>
     </div>
@@ -66,7 +18,7 @@
 </a>
 
 <!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -82,7 +34,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- Bootstrap core JavaScript-->
 <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>

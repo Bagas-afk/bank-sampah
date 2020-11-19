@@ -12,7 +12,7 @@
                         <div class="col-lg">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Forgot your password?</h1>
+                                    <h1 class="h4 text-gray-900 mb-4">Lupa password?</h1>
                                     <img class="img-responsive display-block pb-3" src="<?= base_url('assets/img/banksampah.JPG'); ?>" alt="responsive-image" width="35%">
                                 </div>
 
@@ -27,12 +27,12 @@
                                         <input type="text" class="form-control form-control-user" id="email" placeholder="Email" name="email">
                                         <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
-                                    <button type="submit" class="btn btn-primary btn-user btn-block">Reset Password </button>
+                                    <button type="submit" class="btn btn-primary btn-user btn-block">Ganti Password </button>
 
                                 </form>
                                 <hr>
                                 <div class="text-center">
-                                    <a class="medium" href="<?= base_url('auth'); ?>">Back to login!</a>
+                                    <a class="medium" href="<?= base_url('auth'); ?>">Kembali kehalaman login!</a>
                                 </div>
                             </div>
                         </div>

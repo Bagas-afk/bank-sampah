@@ -21,7 +21,7 @@ class User extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
-        $data['title']  = 'Dashboard';
+        $data['title']  = 'Dashboard Admin';
         $data['query']  = $this->ModelNasabah->countUser();
         $data['query1'] = $this->ModelSampah->countSampah();
         $data['query2'] = $this->ModelSetor->countSetor();
@@ -129,7 +129,7 @@ class User extends CI_Controller
         $wd    = $this->ModelSetor->dataTransaksi(["tipe_transaksi" => "Withdraw"])->num_rows();
         echo json_encode($setor . $wd);
     }
-    
+
     public function sampah()
     {
         $data['user'] = $this->db->get_where('user', ['email' =>

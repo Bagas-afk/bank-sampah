@@ -139,10 +139,10 @@
           </form>
           <hr>
           <div class="text-center">
-            <a class="medium" href="<?= base_url('auth'); ?>">Already have an account? Login!</a>
+            <label for="">Sudah mempunyai akun?</label><a class="medium" href="<?= base_url('auth'); ?>"> Login!</a>
           </div>
           <div class="text-center">
-            <a class="medium" href="<?= base_url('auth/forgot'); ?>">Forgot Password!</a>
+            <a class="medium" href="<?= base_url('auth/forgot'); ?>">Lupa Password!</a>
           </div>
         </div>
       </div>

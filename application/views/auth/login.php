@@ -12,7 +12,7 @@
             <div class="col-lg">
               <div class="p-5">
                 <div class="text-center">
-                  <h1 class="h4 text-gray-900 mb-4">Login Page-Bank Sampah</h1>
+                  <h1 class="h4 text-gray-900 mb-4">Halaman login</h1>
                   <img class="img-responsive display-block pb-3" src="banksampah.JPG" alt="responsive-image" width="35%">
                 </div>
 
@@ -34,10 +34,10 @@
                 </form>
                 <hr>
                 <div class="text-center">
-                  <a class="medium" href="<?= base_url('auth/registration'); ?>">Create an Account!</a>
+                  <label for="">Belum punya akun?</label> <a class="medium" href="<?= base_url('auth/registration'); ?>">Daftar</a>
                 </div>
                 <div class="text-center">
-                  <a class="medium" href="<?= base_url('auth/forgot'); ?>">Forgot Password!</a>
+                  <a class="medium" href="<?= base_url('auth/forgot'); ?>">Lupa Password!</a>
                 </div>
               </div>
             </div>

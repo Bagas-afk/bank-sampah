@@ -17,7 +17,7 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
         if ($this->form_validation->run() == false) {
-            $data['title'] = 'Login Page';
+            $data['title'] = 'Halaman Login';
             $this->load->view('templates/header', $data);
             $this->load->view('auth/login');
         } else {
@@ -99,7 +99,7 @@ class Auth extends CI_Controller
 
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = 'User Registration';
+            $data['title'] = 'Registrasi Nasabah';
             $this->load->view('templates/header', $data);
             $this->load->view('auth/registration');
             $this->load->view('templates/footer');
@@ -195,7 +195,7 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('nik', 'Nik', 'trim|numeric|max_length[16]|min_length[16]');
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = 'Forgot Password';
+            $data['title'] = 'Lupa Password Password';
             $this->load->view('templates/header', $data);
             $this->load->view('auth/forgot');
         } else {

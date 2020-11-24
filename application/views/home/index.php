@@ -38,8 +38,7 @@
             <li class="nav-item form-inline my-2 my-lg-0">
                 <a class="navbar-brand" href="<?= base_url('home') ?>" class="page-scroll">Home <span class="sr-only">(current)</span></a>
                 <a class="navbar-brand" href="#about" class="page-scroll">About <span class="sr-only">(current)</span></a>
-                <a class="navbar-brand" href="#contact" class="page-scroll">Contact <span class="sr-only">(current)</span></a>
-                <a class="navbar-brand" href="<?= base_url('auth') ?>" class="page-scroll">Login <span class="sr-only">(current)</span></a>
+                <a class="btn btn-primary navbar-brand" href="<?= base_url('auth') ?>" class=" page-scroll">Login <span class="sr-only">(current)</span></a>
             </li>
         </div>
     </nav>
@@ -108,49 +107,11 @@
         </div>
     </section>
 
-    <!-- endsection about -->
 
-    <!-- contact -->
-    <section class="contact mt-5" id="contact" name="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h2 class="text-center"> Contact us</h2>
-                    <hr>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-10 col-sm-offset-2">
-                    <form>
-                        <div class="form-group">
-                            <div class="col-md-9 offset-md-3">
-                                <label for="nama">Nama</label>
-                                <input type="text" class="form-control" id="nama" aria-describedby="emailHelp">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-9 offset-md-3">
-                                <label for="email">Email</label>
-                                <input type="text" class="form-control" id="email" aria-describedby="emailHelp">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-9 offset-md-3">
-                                <label for="alamat">Kritik dan Saran</label>
-                                <textarea cols="10" rows="5" type="text" class="form-control" id="alamat" aria-describedby="emailHelp"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-9 offset-md-3">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- endsection contact -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
     <!-- Footer -->
     <footer class="sticky-footer alert-info fix-bottom">

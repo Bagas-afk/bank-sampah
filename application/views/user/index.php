@@ -30,7 +30,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-300"><span><?= $query1 ?></div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-list fa-2x text-gray-300"></i>
+                            <i class="fas fa-trash fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-300"><span><?= $query2 ?></div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-trash fa-2x text-gray-300"></i>
+                            <i class="fas fa-list fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>

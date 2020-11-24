@@ -1,8 +1,6 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-    <link rel="stylesheet" href="<?= base_url('assets/style.css') ?>">
-
     <!-- Page Heading -->
     <h3><?= $title; ?></h3>
 
@@ -23,7 +21,6 @@
                         </select>
                     </div>
                 </div>
-
         </table>
 
         <table class="table table-border">

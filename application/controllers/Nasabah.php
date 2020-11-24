@@ -60,20 +60,25 @@ class Nasabah extends CI_Controller
         // print_r($saldoNasabah);
         // die;
         $last_balance = intval($saldoNasabah->saldo - $sub_total);
+        if ($last_balance < 0) {
+            $this->session->set_flashdata(
+                'message',
+                '<div class="alert alert-danger" role="alert">Saldo anda tidak cukup </div>'
+            );
+            redirect('nasabah/cek_saldo');
+        }
 
-        $data = [
-            'id' => '',
-            'id_user' => $this->session->userdata('id'),
-            'sebelum_transaksi' => $saldoNasabah->saldo,
-            'sesudah_transaksi' => $last_balance,
-            'jumlah_subtotal' => $sub_total,
-            'tanggal_transaksi' => $this->input->post('tanggal'),
-            'detail_transaksi' => 'Pending',
-            'tipe_transaksi' => 'Withdraw',
-        ];
-        // print_r($data);
-        // die;
-        if ($data['jumlah_subtotal'] >= 1000) {
+        if ($sub_total >= 1000) {
+            $data = [
+                'id' => '',
+                'id_user' => $this->session->userdata('id'),
+                'sebelum_transaksi' => $saldoNasabah->saldo,
+                'sesudah_transaksi' => $last_balance,
+                'jumlah_subtotal' => $sub_total,
+                'tanggal_transaksi' => $this->input->post('tanggal'),
+                'detail_transaksi' => 'Pending',
+                'tipe_transaksi' => 'Withdraw',
+            ];
             $this->ModelNasabah->tarikSaldo($data);
             $this->session->set_flashdata(
                 'message',
@@ -87,14 +92,5 @@ class Nasabah extends CI_Controller
             );
             redirect('nasabah/cek_saldo');
         }
-        // if ($data['jumlah_subtotal'] == 0) {
-        //     $this->session->set_flashdata(
-        //         'message',
-        //         '<div class="alert alert-danger" role="alert"> Saldo anda tidak cukup </div>'
-        //     );
-        //     redirect('nasabah/cek_saldo');
-        // } else {
-
-        // }
     }
 }

@@ -61,7 +61,7 @@
         </div>
 
         <div class="table-responsive">
-            <table class="table table-bordered" id="datatable">
+            <table class="table table-bordered">
                 <thead class="thead-light">
                     <th>No</th>
                     <th>Nama Nasabah</th>

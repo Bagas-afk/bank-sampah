@@ -130,7 +130,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="row">
-                        <h5 class="text-reset ml-2">Contact us</h5>
+                        <h5 class="text-reset ml-2">Kontak</h5>
                     </div>
                     <div class="row">
                         <div class="col-sm-1">
@@ -151,8 +151,8 @@
                 </div>
                 <div class="col-md-2">
                     <div class="row">
-                        <h5 class="text-reset">Follow us on social media</h5>
-                        <label class="pt-2">Dapatkan info dengan mengikuti sosial media kami!</label>
+                        <h5 class="text-reset">Follow sosial media kami</h5>
+                        <label class="pt-2">Dapatkan info penimbangan dengan sosial media kami!</label>
                     </div>
                     <div class="row">
                         <a href="https://www.instagram.com/banksampahjawara/" target="_blank" rel="nofollow" title="bank sampah"><i class="fab fa-instagram fa-2x"></i></a>

@@ -32,7 +32,6 @@
                   </button>
                   <hr>
                 </form>
-                <hr>
                 <div class="text-center">
                   <label for="">Belum punya akun?</label> <a class="medium" href="<?= base_url('auth/registration'); ?>">Daftar</a>
                 </div>

@@ -424,37 +424,6 @@ class User extends CI_Controller
         }
     }
 
-    public function m_user()
-    {
-        $data['title'] = 'Management User';
-        $data['user']  = $this->db->get_where('user', ['email' =>
-        $this->session->userdata('email')])->row_array();
-
-        $data['tampilUser'] = $this->ModelNasabah->tampilNasabahAktif()->result();
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('user/m_user', $data);
-        $this->load->view('templates/footer');
-    }
-
-    public function editRole()
-    {
-        $id      = $this->input->post('id');
-        $role_id = $this->input->post('role_id');
-        $data    = [
-            'role_id' => $role_id,
-        ];
-        if ($this->ModelNasabah->editRole($data, $id)) {
-            $this->session->set_flashdata(
-                'message',
-                '<div class="alert alert-success" role="alert"> Role id berhasil di update</div>'
-            );
-            redirect('user/m_user');
-        } else {
-            echo 'gagal';
-        }
-    }
 
     public function tampilCetak($tanggal)
     {

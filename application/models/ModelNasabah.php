@@ -53,6 +53,12 @@
         return $this->db->get('user');
     }
 
+    function tampilSemuaUser()
+    {
+        $this->db->where('status_akun', '1');
+        return $this->db->get('user');
+    }
+
     function cari_data_nasabah($id_nasabah, $email)
     {
         $this->db->where('id', $id_nasabah);

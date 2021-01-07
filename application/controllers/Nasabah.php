@@ -45,6 +45,7 @@ class Nasabah extends CI_Controller
         // print_r($data['setor']);
         // die;
         $data['penarikan'] = $this->ModelSetor->tampilPenarikanNasabah($this->session->userdata('id'))->result();
+        $data['penarikan'] = $this->ModelSetor->tampilPenarikan($this->session->userdata('id'))->result();
         $data['title'] = 'Cek Saldo';
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);

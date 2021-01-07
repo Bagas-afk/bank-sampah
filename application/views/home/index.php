@@ -26,7 +26,7 @@
 <body>
     <!-- navbar -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light ">
         <img src="<?= base_url('assets/img/logo.png') ?>" alt="logo" style="width: 90px; height: 60px; ">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -36,19 +36,29 @@
 
             </ul>
             <li class="nav-item form-inline my-2 my-lg-0">
-                <a class="navbar-brand" href="<?= base_url('home') ?>" class="page-scroll">Home <span class="sr-only">(current)</span></a>
-                <a class="navbar-brand" href="#about" class="page-scroll">About <span class="sr-only">(current)</span></a>
-                <a class="btn btn-primary navbar-brand" href="<?= base_url('auth') ?>" class=" page-scroll">Login <span class="sr-only">(current)</span></a>
+                <a class="navbar-brand" href="<?= base_url('home') ?>" class="page-scroll">Home</a>
+                <a class="navbar-brand" href="#about" class="page-scroll">About</a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active dropdown">
+                            <a class="nav-link navbar-brand dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="<?= base_url('auth') ?>">Administrator</a>
+                                <a class="dropdown-item" href="<?= base_url('auth/nasabah') ?>">Nasabah</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </li>
         </div>
     </nav>
     <!-- end navbar -->
 
     <!-- Jumbotron -->
-    <h1 class="pt-2 font-weight-bold" align="center">Bank Sampah Jawara</h1>
     <div class="jumbotron jumbotron-fluid alert-info">
         <div class="container">
             <table class="table-responsive">
+                <h1 class="font-weight-bold" align="center">Bank Sampah Jawara</h1>
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>

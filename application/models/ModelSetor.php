@@ -57,6 +57,13 @@
         return $this->db->get('tb_transaksi');
     }
 
+    public function tampilPenarikan($id_user)
+    {
+        $this->db->where('id_user', $id_user);
+        $this->db->where('tipe_transaksi', 'withdraw');
+        return $this->db->get('tb_transaksi');
+    }
+
     public function cetakTransaksi($tanggal)
     {
         return $this->db->query("SELECT * FROM tb_transaksi INNER JOIN user ON user.id=tb_transaksi.id_user INNER JOIN tb_harga ON tb_harga.id=tb_transaksi.id_sampah WHERE tanggal_transaksi = '$tanggal'");

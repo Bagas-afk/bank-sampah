@@ -13,7 +13,6 @@ class Auth extends CI_Controller
 
     public function index()
     {
-
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
         if ($this->form_validation->run() == false) {
@@ -26,10 +25,56 @@ class Auth extends CI_Controller
         }
     }
 
+    public function nasabah()
+    {
+        $this->form_validation->set_rules('nik', 'nik', 'trim|required|numeric');
+        if ($this->form_validation->run() == false) {
+            $data['title'] = 'Halaman Login Nasabah';
+            $this->load->view('templates/header', $data);
+            $this->load->view('auth/login_nasabah');
+        } else {
+            //validation success
+            $this->login_nasabah();
+        }
+    }
+
+
+    public function login_nasabah()
+    {
+        $nik = $this->input->post('nik');
+        $user = $this->db->get_where('user', ['nik' => $nik])->row_array();
+        // print_r($user);
+        // die;
+        if ($user) {
+            // jika usernya aktif
+            if ($user['status_akun'] == 1) {
+                // cek password
+                $data = [
+                    'id' => $user['id'],
+                    'email' => $user['email'],
+                    'role_id' => $user['role_id']
+                ];
+                $this->session->set_userdata($data);
+                userLog('login', $this->session->userdata('id'));
+                redirect('nasabah/index_nasabah');
+            } else {
+                $this->session->set_flashdata(
+                    'message',
+                    '<div class="alert alert-danger" role="alert"> NIK belum diaktivasi.</div>'
+                );
+                redirect('auth/nasabah');
+            }
+        } else {
+            $this->session->set_flashdata(
+                'message',
+                '<div class="alert alert-danger" role="alert"> NIK ini belum terdaftar</div>'
+            );
+            redirect('auth/nasabah');
+        }
+    }
 
     private function _login()
     {
-
         $email = $this->input->post('email');
         $password = $this->input->post('password');
         $user = $this->db->get_where('user', ['email' => $email])->row_array();
@@ -51,8 +96,10 @@ class Auth extends CI_Controller
                     userLog('login', $this->session->userdata('id'));
                     if ($user['role_id'] == 1) {
                         redirect('user');
-                    } else {
+                    } elseif ($user['role_id'] == 2) {
                         redirect('nasabah/index_nasabah');
+                    } else {
+                        redirect('superadm/index');
                     }
                 } else {
                     $this->session->set_flashdata(
@@ -166,6 +213,8 @@ class Auth extends CI_Controller
             redirect('user');
         } elseif ($this->session->userdata('role_id') == 2) {
             redirect('nasabah/index_nasabah');
+        } elseif ($this->session->userdata('role_id') == 3) {
+            redirect('Superadm/index');
         } else {
             echo "Tidak Ada Role";
             redirect('home');
@@ -180,7 +229,6 @@ class Auth extends CI_Controller
         // die;
         $this->session->unset_userdata('email');
         $this->session->unset_userdata('role_id');
-
         $this->session->set_flashdata(
             'message',
             '<div class="alert alert-success" role="alert"> Berhasil keluar!</div>'

@@ -44,7 +44,10 @@
 <!-- Core plugin JavaScript-->
 <script src="<?= base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
 <script src="<?= base_url('assets/'); ?>datatables/datatables.js"></script>
-<script type="text/javascript" src="<?= base_url('assets/'); ?>datatables/datatables.min.js"></script>
+<script type="text/javascript" src="<?= base_url('/assets/js/') ?>pdfmake.min.js"></script>
+<script type="text/javascript" src="<?= base_url('/assets/js/') ?>vfs_fonts.js"></script>
+<script type="text/javascript" src="<?= base_url('/assets/js/') ?>datatables.min.js"></script>
+<!-- <script type="text/javascript" src="<?= base_url('assets/'); ?>datatables/datatables.min.js"></script> -->
 
 
 <!-- Custom scripts for all pages-->

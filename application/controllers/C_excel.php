@@ -23,4 +23,13 @@ class C_excel extends CI_Controller
 
         $this->load->view('user/export', $data);
     }
+
+    public function cetakNasabah()
+    {
+        $data['title'] = 'Export to excel';
+        $this->load->model('ModelNasabah');
+        $data['setor'] = $this->ModelNasabah->tampilNasabah()->result();
+
+        $this->load->view('admin/exportNasabah', $data);
+    }
 }

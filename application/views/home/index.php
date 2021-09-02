@@ -127,10 +127,10 @@
     <footer class="sticky-footer alert-info fix-bottom">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-2 ml-5">
+                <div class="col">
                     <img src="<?= base_url('assets/img/logo.png'); ?>" style="width: 120px; height: 90px; " alt="logo">
                 </div>
-                <div class="col-md-3">
+                <div class="col">
                     <div class="col-md-2">
                         <h5 for="alamat" class="text-reset"> Alamat </h5>
                     </div>
@@ -138,28 +138,22 @@
                         <label> Jl. Cendrawasih Raya RT.004/RW.02 No. 16 Kel. Sawah Baru, Ciputat, Tanggerang Selatan </label>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="row">
-                        <h5 class="text-reset ml-2">Kontak</h5>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-1">
-                            <span><i class="fas fa-envelope-square fa-2x"></i></span>
-                        </div>
-                        <div class="col-sm-4">
+                <div class="col">
+                    <h5 class="text-reset ml-2">Kontak</h5>
+                    <div class="col">
+                        <div class="col-sm">
+                            <span><i class="fas fa-envelope-square fa-2x"></i></span>                            
                             <label class="pt-1">banksampah@gmail.com</label>
                         </div>
+                        <div class="col-sm">
+                        </div>
+
                     </div>
-                    <div class="row">
-                        <div class="col-sm-1">
-                            <span><i class="fas fa-mobile fa-2x mt-2 ml-1"></i></span>
-                        </div>
-                        <div class="col-sm-6">
-                            <label class="pt-2">0877 7336 3785 (Admin)</label>
-                        </div>
+                       <div class="col-md-6">
+                        <span><i class="fas fa-mobile fa-2x mt-2 ml-1"></i><label class="pt-2">0877 7336 3785 (Admin)</label></span>
                     </div>
                 </div>
-                <div class="col-md-2">
+                <div class="col">
                     <div class="row">
                         <h5 class="text-reset">Follow sosial media kami</h5>
                         <label class="pt-2">Dapatkan info penimbangan dengan sosial media kami!</label>

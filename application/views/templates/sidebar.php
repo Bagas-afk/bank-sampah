@@ -185,7 +185,59 @@
         </div>
 
     </ul>
+    <?php } else if ($this->session->userdata("role_id") == "4") { ?>
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('client/index'); ?>">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fas fa-trash-restore"></i>
+            </div>
+            <div class="sidebar-brand-text mx-1">Bank Sampah</div>
+        </a>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <div class="sidebar-heading">
+            Client
+        </div>
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url('client/index'); ?>">
+                <i class="fas fa-fw fa-user-alt"></i>
+                <span>My Profile</span></a>
+        </li>
+        <!-- <li class="nav-item">
+            <a class="nav-link" href="<?= base_url('user/editProfile'); ?>">
+                <i class="fas fa-fw fa-user-alt"></i>
+                <span>Edit Profile</span></a>
+        </li> -->
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url('client/tabungan'); ?>">
+                <i class="fas fa-fw fa-money-check-alt"></i>
+                <span>Tabungan</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url('auth/logout'); ?>">
+                <i class="fas fa-fw fa-sign-out-alt"></i>
+                <span>Logout</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+
+    </ul>
 
 <?php } ?>
 

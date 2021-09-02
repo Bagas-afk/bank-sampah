@@ -98,6 +98,8 @@ class Auth extends CI_Controller
                         redirect('user');
                     } elseif ($user['role_id'] == 2) {
                         redirect('nasabah/index_nasabah');
+                    } elseif ($user['role_id'] == 4) {
+                        redirect('client/index');
                     } else {
                         redirect('superadm/index');
                     }
@@ -215,6 +217,8 @@ class Auth extends CI_Controller
             redirect('nasabah/index_nasabah');
         } elseif ($this->session->userdata('role_id') == 3) {
             redirect('Superadm/index');
+        } elseif ($this->session->userdata('role_id') == 4) {
+            redirect('client/index');
         } else {
             echo "Tidak Ada Role";
             redirect('home');

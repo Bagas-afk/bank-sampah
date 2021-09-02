@@ -127,7 +127,7 @@
     <footer class="sticky-footer alert-info fix-bottom">
         <div class="container-fluid">
             <div class="row">
-                <div class="col">
+                <div class="d-flex col ml-3">
                     <img src="<?= base_url('assets/img/logo.png'); ?>" style="width: 120px; height: 90px; " alt="logo">
                 </div>
                 <div class="col">

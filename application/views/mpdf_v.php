@@ -31,9 +31,8 @@
             <table class="center" align="center" border="1" style="margin:20px 25px 50px 3px" cellspacing="0" cellpadding="5px">
                 <thead>
                     <tr>
-                        <th scope=" col">No</th>
+                        <th scope="col">No</th>
                         <th scope="col">Jenis Sampah</th>
-                        <th scope="col">Harga</th>
                         <th scope="col">Satuan</th>
 
                     </tr>
@@ -42,10 +41,8 @@
                     <?php $no = 1;
                     foreach ($jenis_sampah as $sampah) { ?>
                         <tr>
-
                             <td><?= $no++ ?></td>
-                            <td style="width: 151px;" align="center"><?= $sampah->jenis_sampah ?></td>
-                            <td style="width: 151px;" align="center"><?= $sampah->harga ?></td>
+                            <td style="width: 200px;" align="center"><?= $sampah->jenis_sampah ?></td>
                             <td style="width: 151px;" align="center"><?= $sampah->satuan ?></td>
                         </tr>
                     <?php } ?>
@@ -56,7 +53,7 @@
                 <tr>
                     <td valign="center">
                         <div class="text-center">
-                            <h2 class="mt-n3" text-align="center" style="font-size: 15pt; background-color:red;">*Harga sewaktu-waktu akan berubah</h2>
+                            <h2 class="mt-n3" text-align="center" style="font-size: 15pt; background-color:yellow;">*Nb: *Semua jenis barang harus BERSIH dan KERING</h2>
                         </div>
                     </td>
                 </tr>

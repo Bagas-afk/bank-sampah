@@ -140,17 +140,17 @@
                 </div>
                 <div class="col">
                     <h5 class="text-reset ml-2">Kontak</h5>
-                    <div class="col">
-                        <div class="col-sm">
-                            <span><i class="fas fa-envelope-square fa-2x"></i></span>                            
-                            <label class="pt-1">banksampah@gmail.com</label>
+                    <div class="row">
+                        <div class="col">
+                            <div class="col-sm">
+                                <span><i class="fas fa-envelope-square fa-2x"></i></span>                            
+                                <label class="pt-1">banksampah@gmail.com</label>
+                            </div>
+                            <div class="col-sm">
+                                <span><i class="fas fa-mobile fa-2x mt-2 ml-1"></i></span>
+                                <label class="pt-2">0877 7336 3785 (Admin)</label>    
+                            </div>
                         </div>
-                        <div class="col-sm">
-                        </div>
-
-                    </div>
-                       <div class="col-md-6">
-                        <span><i class="fas fa-mobile fa-2x mt-2 ml-1"></i><label class="pt-2">0877 7336 3785 (Admin)</label></span>
                     </div>
                 </div>
                 <div class="col">

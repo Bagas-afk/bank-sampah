@@ -101,7 +101,7 @@ class User extends CI_Controller
         $data['setor']   = $this->ModelSetor->tampilDataSetor()->result();
         // print_r($data['nasabah']);
         // die;
-        $data['title'] = 'Form Tambah Setor Sampah';
+        $data['title'] = 'Form Pengangkutan Sampah Dari Rumah';
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);

@@ -28,6 +28,7 @@ class MpdfController extends CI_Controller
         $payStub->Output(("Daftar harga ") . date("Y-m-d.") . '.pdf', 'I');
     }
 
+
     public function penarikan($id)
     {
         require_once APPPATH . 'vendor/autoload.php';

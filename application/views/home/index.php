@@ -22,6 +22,8 @@
     <link href="<?= base_url('assets/'); ?>fontawesome/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css'); ?>">
     <link rel="icon" type="image/jpg" href="<?= base_url('assets/img/'); ?>banksampah.jpg">
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 <body>
     <!-- navbar -->
@@ -92,30 +94,31 @@
     </div>
     <!-- end Jumbotron -->
 
-    <!-- section about -->
-    <section class="about mt-5" id="about" name="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h2 class="text-center">About us</h2>
-                    <hr>
+    <div class="container">
+        <!-- section about -->
+        <section class="about mt-5" id="about" name="about" data-aos="fade-out" data-aos-offset="200">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2 class="text-center">Tentang Kami</h2>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 offset-sm-2" data-aos="fade-right" data-aos-delay="1000">
+                        <h4 align="center">Visi</h4>
+                        <li style="font-size: large;"> Terciptanya masyarakat sawah baru yang mandiri, sejahtera dan menciptakan lingkungan yang bersih.</li>
+    
+                    </div>
+                    <div class="col-sm-4"  data-aos="fade-left" data-aos-delay="1500">
+                        <h4 align="center">Misi</h4>
+                        <li style="font-size: large;">Meningkatkan kualitas Sumber Daya masnusia yang profesional, berbudaya dan berintegritas tinggi.</li>
+                        <li style="font-size: large;">Meningkatkan kualitas dan Kuantitas Insfrastruktur Daerah untuk Pemenuhan Pelayanan Publik.</li>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-4 offset-sm-2 ">
-                    <h4 align="center">Visi</h4>
-                    <li style="font-size: large;"> Terciptanya masyarakat sawah baru yang mandiri, sejahtera dan menciptakan lingkungan yang bersih.</li>
-
-                </div>
-                <div class="col-sm-4 ">
-                    <h4 align="center">Misi</h4>
-                    <li style="font-size: large;">Meningkatkan kualitas Sumber Daya masnusia yang profesional, berbudaya dan berintegritas tinggi.</li>
-                    <li style="font-size: large;">Meningkatkan kualitas dan Kuantitas Insfrastruktur Daerah untuk Pemenuhan Pelayanan Publik.</li>
-
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
 
     <!-- Scroll to Top Button-->
@@ -174,7 +177,11 @@
         </div>
     </footer>
     <!-- End of Footer -->
-
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
     <!-- Bootstrap core JavaScript-->
     <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>

@@ -20,6 +20,15 @@
                             <?php  } ?>
                         </select>
                     </div>
+                    <label class="col-sm-2 col-form-label">Pilih Data Setoran</label>
+                    <div class="col-sm-4">
+                        <select name="jenis_setoran" class="form-control" required onchange="" id="">
+                            <option value="">-- Pilih Data --</option>
+                                <option value="tabungan">Tabungan</option>
+                                <option value="donasi">Donasi</option>
+                                <option value="psdr">PSDR</option>
+                        </select>
+                    </div>
                 </div>
         </table>
 

@@ -25,7 +25,7 @@ date_default_timezone_set('Asia/Jakarta');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://31c0-110-137-199-71.ngrok.io/bank-sampah/';
+$config['base_url'] = 'http://localhost/bank-sampah/';
 
 /*
 |--------------------------------------------------------------------------

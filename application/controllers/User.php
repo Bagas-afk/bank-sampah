@@ -64,6 +64,7 @@ class User extends CI_Controller
         $id_user      = $this->input->post('namanasabah');
         $id_sampah    = $this->input->post('jenis_sampah');
         $sub_total    = $this->input->post('subtotal');
+        $jenis_setoran = $this->input->post('jenis_setoran');
         $saldoNasabah = $this->ModelSetor->saldoNasabah($id_user)->row();
         $last_balance = intval($saldoNasabah->saldo + $sub_total);
 
@@ -72,6 +73,7 @@ class User extends CI_Controller
             'id_user'           => $id_user,
             'id_sampah'         => $id_sampah,
             'sebelum_transaksi' => $saldoNasabah->saldo,
+            'jenis_setoran' => $jenis_setoran,
             'sesudah_transaksi' => $last_balance,
             'banyak_sampah'     => $this->input->post('jumlah_kg'),
             'jumlah_subtotal'   => $sub_total,
